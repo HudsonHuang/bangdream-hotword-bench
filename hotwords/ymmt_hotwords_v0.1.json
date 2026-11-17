@@ -1,0 +1,2902 @@
+{
+ "schema": "ymmt-hotwords/v0.1",
+ "name": "ymmt_hotwords_v0.1",
+ "created": "2026-11-17",
+ "description": "梦限大 MewType × BanG Dream! 人名/乐队名最小完备读音版标准热词",
+ "principles": [
+  "只收读音基元（kana）+ 组合规则；不为每个 ASR 错写单开条目。",
+  "同一实体的同音/近音、缩写与全称同组；组合由「单元拼接」「单元+后缀」生成。",
+  "例：夢限大组 = むげんだい + みゅーたいぷ（+ 拼接 むげんだいみゅーたいぷ）；nnk 组 = のの + ちゃん → ののちゃん。",
+  "每个派生形态带可接受中文，供 ASR→翻译 / 音频→中文同传评测。"
+ ],
+ "groups": [
+  {
+   "id": "p_arale",
+   "kind": "person",
+   "canonical_ja": "仲町あられ",
+   "canonical_zh": [
+    "阿拉蕾"
+   ],
+   "units": [
+    {
+     "reading": "あられ",
+     "ja": [
+      "あられ",
+      "アラレ"
+     ],
+     "zh": [
+      "阿拉蕾"
+     ]
+    },
+    {
+     "reading": "なかまちあられ",
+     "ja": [
+      "仲町あられ"
+     ],
+     "zh": [
+      "阿拉蕾"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [
+    {
+     "base": "あられ",
+     "suffixes": {
+      "ちゃん": [
+       "阿拉蕾酱",
+       "阿拉蕾"
+      ]
+     }
+    }
+   ],
+   "special": [],
+   "derived": [
+    {
+     "reading": "あられ",
+     "ja": [
+      "あられ",
+      "アラレ"
+     ],
+     "zh": [
+      "阿拉蕾"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "なかまちあられ",
+     "ja": [
+      "仲町あられ"
+     ],
+     "zh": [
+      "阿拉蕾"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "あられちゃん",
+     "ja": [
+      "あられちゃん",
+      "アラレちゃん",
+      "あられちゃん"
+     ],
+     "zh": [
+      "阿拉蕾酱",
+      "阿拉蕾"
+     ],
+     "source": "suffix"
+    }
+   ],
+   "asr_words_ja": [
+    "あられ",
+    "アラレ",
+    "仲町あられ",
+    "あられちゃん",
+    "アラレちゃん"
+   ],
+   "error_forms": [
+    {
+     "reading": "あらい",
+     "ja": [
+      "荒井"
+     ]
+    },
+    {
+     "reading": "あられちゃん",
+     "ja": [
+      "アラレちゃん"
+     ]
+    }
+   ],
+   "name_forms_ja": [
+    "あられ",
+    "アラレ",
+    "仲町あられ",
+    "あられちゃん",
+    "アラレちゃん",
+    "荒井"
+   ],
+   "neg_check_forms": [
+    "仲町あられ",
+    "あられ",
+    "アラレ",
+    "あらレ",
+    "あられちゃん",
+    "アラレちゃん",
+    "あられち",
+    "Arale",
+    "arale",
+    "荒井"
+   ],
+   "readings": [
+    "あられ",
+    "なかまちあられ",
+    "あられちゃん"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "阿拉蕾"
+    ],
+    "aliases": [
+     "阿拉蕾",
+     "阿拉蕾酱"
+    ],
+    "variant_zh": {
+     "あられ": [
+      "阿拉蕾",
+      "阿拉蕾酱"
+     ]
+    },
+    "name_forms_zh": [
+     "阿拉蕾"
+    ]
+   },
+   "en": [
+    "Arale",
+    "Nakamachi Arale",
+    "Arare"
+   ]
+  },
+  {
+   "id": "p_nonoka",
+   "kind": "person",
+   "canonical_ja": "宮永ののか",
+   "canonical_zh": [
+    "野乃花"
+   ],
+   "units": [
+    {
+     "reading": "ののか",
+     "ja": [
+      "ののか",
+      "ノノカ"
+     ],
+     "zh": [
+      "野乃花"
+     ]
+    },
+    {
+     "reading": "みやながののか",
+     "ja": [
+      "宮永ののか"
+     ],
+     "zh": [
+      "野乃花"
+     ]
+    },
+    {
+     "reading": "こくおう",
+     "ja": [
+      "国王"
+     ],
+     "zh": [
+      "国王",
+      "野乃花"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [
+    {
+     "base": "のの",
+     "suffixes": {
+      "ちゃん": [
+       "のの酱",
+       "野乃花"
+      ],
+      "ちん": [
+       "野乃花",
+       "のの酱"
+      ],
+      "たん": [
+       "野乃花",
+       "のの酱"
+      ],
+      "さん": [
+       "野乃花"
+      ]
+     }
+    }
+   ],
+   "special": [
+    {
+     "reading": "のんちゃん",
+     "ja": [
+      "のんちゃん",
+      "ノンちゃん"
+     ],
+     "zh": [
+      "野乃花",
+      "のの酱"
+     ]
+    },
+    {
+     "reading": "のーちゃん",
+     "ja": [
+      "のーちゃん",
+      "ノーちゃん"
+     ],
+     "zh": [
+      "野乃花",
+      "のの酱"
+     ]
+    }
+   ],
+   "derived": [
+    {
+     "reading": "ののか",
+     "ja": [
+      "ののか",
+      "ノノカ"
+     ],
+     "zh": [
+      "野乃花"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "みやながののか",
+     "ja": [
+      "宮永ののか"
+     ],
+     "zh": [
+      "野乃花"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "こくおう",
+     "ja": [
+      "国王"
+     ],
+     "zh": [
+      "国王",
+      "野乃花"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "ののちゃん",
+     "ja": [
+      "ののちゃん",
+      "ののちゃん"
+     ],
+     "zh": [
+      "のの酱",
+      "野乃花"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "ののちん",
+     "ja": [
+      "ののちん",
+      "ののちん"
+     ],
+     "zh": [
+      "野乃花",
+      "のの酱"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "ののたん",
+     "ja": [
+      "ののたん",
+      "ののたん"
+     ],
+     "zh": [
+      "野乃花",
+      "のの酱"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "ののさん",
+     "ja": [
+      "ののさん",
+      "ののさん"
+     ],
+     "zh": [
+      "野乃花"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "のんちゃん",
+     "ja": [
+      "のんちゃん",
+      "ノンちゃん"
+     ],
+     "zh": [
+      "野乃花",
+      "のの酱"
+     ],
+     "source": "special"
+    },
+    {
+     "reading": "のーちゃん",
+     "ja": [
+      "のーちゃん",
+      "ノーちゃん"
+     ],
+     "zh": [
+      "野乃花",
+      "のの酱"
+     ],
+     "source": "special"
+    }
+   ],
+   "asr_words_ja": [
+    "ののか",
+    "ノノカ",
+    "宮永ののか",
+    "国王",
+    "ののちゃん",
+    "ののちん",
+    "ののたん",
+    "ののさん",
+    "のんちゃん",
+    "ノンちゃん",
+    "のーちゃん",
+    "ノーちゃん"
+   ],
+   "error_forms": [
+    {
+     "reading": "ののかおり",
+     "ja": [
+      "野乃香"
+     ]
+    },
+    {
+     "reading": "ののはな",
+     "ja": [
+      "乃乃花"
+     ]
+    },
+    {
+     "reading": "ののかおり",
+     "ja": [
+      "乃乃香"
+     ]
+    },
+    {
+     "reading": "ののみ",
+     "ja": [
+      "野乃美"
+     ]
+    },
+    {
+     "reading": "ののはな",
+     "ja": [
+      "野々花"
+     ]
+    },
+    {
+     "reading": "みやながののはな",
+     "ja": [
+      "宮永野乃花"
+     ]
+    }
+   ],
+   "name_forms_ja": [
+    "ののか",
+    "ノノカ",
+    "宮永ののか",
+    "国王",
+    "ののちゃん",
+    "ののちん",
+    "ののたん",
+    "ののさん",
+    "のんちゃん",
+    "ノンちゃん",
+    "のーちゃん",
+    "ノーちゃん",
+    "野乃香",
+    "乃乃花",
+    "乃乃香",
+    "野乃美",
+    "野々花",
+    "宮永野乃花"
+   ],
+   "neg_check_forms": [
+    "宮永ののか",
+    "ののか",
+    "ノノカ",
+    "ののちゃん",
+    "ののちん",
+    "ののたん",
+    "野乃花",
+    "野々花",
+    "野乃香",
+    "乃乃花",
+    "乃乃香",
+    "Nonoka",
+    "nonoka",
+    "nnk",
+    "国王"
+   ],
+   "readings": [
+    "ののか",
+    "みやながののか",
+    "こくおう",
+    "ののちゃん",
+    "ののちん",
+    "ののたん",
+    "ののさん",
+    "のんちゃん",
+    "のーちゃん"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "野乃花"
+    ],
+    "aliases": [
+     "野乃花",
+     "国王",
+     "のの酱"
+    ],
+    "variant_zh": {
+     "ののか": [
+      "野乃花"
+     ],
+     "ののちゃん": [
+      "のの酱",
+      "野乃花"
+     ],
+     "ののちん": [
+      "野乃花",
+      "のの酱"
+     ],
+     "ののたん": [
+      "野乃花",
+      "のの酱"
+     ],
+     "こくおう": [
+      "国王",
+      "野乃花"
+     ]
+    },
+    "name_forms_zh": [
+     "野乃花",
+     "のの酱",
+     "国王"
+    ]
+   },
+   "en": [
+    "Nonoka",
+    "Miyanaga Nonoka",
+    "Nono"
+   ]
+  },
+  {
+   "id": "p_ritsu",
+   "kind": "person",
+   "canonical_ja": "峰月律",
+   "canonical_zh": [
+    "律"
+   ],
+   "units": [
+    {
+     "reading": "りつ",
+     "ja": [
+      "りつ",
+      "リツ",
+      "律"
+     ],
+     "zh": [
+      "律"
+     ]
+    },
+    {
+     "reading": "みねつきりつ",
+     "ja": [
+      "峰月律"
+     ],
+     "zh": [
+      "律"
+     ]
+    },
+    {
+     "reading": "りっしー",
+     "ja": [
+      "リッシー",
+      "りっしー"
+     ],
+     "zh": [
+      "律",
+      "律酱"
+     ]
+    },
+    {
+     "reading": "ししょう",
+     "ja": [
+      "師匠"
+     ],
+     "zh": [
+      "师傅"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [
+    {
+     "base": "りっ",
+     "suffixes": {
+      "ちゃん": [
+       "律酱",
+       "律"
+      ]
+     }
+    },
+    {
+     "base": "りつ",
+     "suffixes": {
+      "ちゃん": [
+       "律酱",
+       "律"
+      ],
+      "さん": [
+       "律"
+      ]
+     }
+    }
+   ],
+   "special": [],
+   "derived": [
+    {
+     "reading": "りつ",
+     "ja": [
+      "りつ",
+      "リツ",
+      "律"
+     ],
+     "zh": [
+      "律"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "みねつきりつ",
+     "ja": [
+      "峰月律"
+     ],
+     "zh": [
+      "律"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "りっしー",
+     "ja": [
+      "リッシー",
+      "りっしー"
+     ],
+     "zh": [
+      "律",
+      "律酱"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "ししょう",
+     "ja": [
+      "師匠"
+     ],
+     "zh": [
+      "师傅"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "りっちゃん",
+     "ja": [
+      "りっちゃん",
+      "りっちゃん"
+     ],
+     "zh": [
+      "律酱",
+      "律"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "りつちゃん",
+     "ja": [
+      "りつちゃん",
+      "リツちゃん",
+      "律ちゃん",
+      "りつちゃん"
+     ],
+     "zh": [
+      "律酱",
+      "律"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "りつさん",
+     "ja": [
+      "りつさん",
+      "リツさん",
+      "律さん",
+      "りつさん"
+     ],
+     "zh": [
+      "律"
+     ],
+     "source": "suffix"
+    }
+   ],
+   "asr_words_ja": [
+    "りつ",
+    "リツ",
+    "律",
+    "峰月律",
+    "リッシー",
+    "りっしー",
+    "師匠",
+    "りっちゃん",
+    "りつちゃん",
+    "リツちゃん",
+    "律ちゃん",
+    "りつさん",
+    "リツさん",
+    "律さん"
+   ],
+   "error_forms": [
+    {
+     "reading": "りつ",
+     "ja": [
+      "莉津"
+     ]
+    },
+    {
+     "reading": "りつ",
+     "ja": [
+      "理津"
+     ]
+    },
+    {
+     "reading": "なしつ",
+     "ja": [
+      "梨津"
+     ]
+    }
+   ],
+   "name_forms_ja": [
+    "りつ",
+    "リツ",
+    "律",
+    "峰月律",
+    "リッシー",
+    "りっしー",
+    "師匠",
+    "りっちゃん",
+    "りつちゃん",
+    "リツちゃん",
+    "律ちゃん",
+    "りつさん",
+    "リツさん",
+    "律さん",
+    "莉津",
+    "理津",
+    "梨津"
+   ],
+   "neg_check_forms": [
+    "峰月律",
+    "りっちゃん",
+    "リッちゃん",
+    "りっしー",
+    "リッシー",
+    "律ちゃん",
+    "莉津",
+    "理津",
+    "梨津",
+    "Ritsu",
+    "ritsu",
+    "師匠"
+   ],
+   "readings": [
+    "りつ",
+    "みねつきりつ",
+    "りっしー",
+    "ししょう",
+    "りっちゃん",
+    "りつちゃん",
+    "りつさん"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "律"
+    ],
+    "aliases": [
+     "律",
+     "律酱",
+     "师傅"
+    ],
+    "variant_zh": {
+     "りつ": [
+      "律"
+     ],
+     "りっちゃん": [
+      "律酱",
+      "律"
+     ],
+     "りっしー": [
+      "律",
+      "律酱"
+     ],
+     "ししょう": [
+      "师傅"
+     ]
+    },
+    "name_forms_zh": [
+     "律",
+     "律酱",
+     "师傅"
+    ]
+   },
+   "en": [
+    "Ritsu",
+    "Minetsuki Ritsu",
+    "Risshi"
+   ]
+  },
+  {
+   "id": "p_miyako",
+   "kind": "person",
+   "canonical_ja": "藤都子",
+   "canonical_zh": [
+    "都子"
+   ],
+   "units": [
+    {
+     "reading": "みやこ",
+     "ja": [
+      "みやこ",
+      "ミヤコ",
+      "都子"
+     ],
+     "zh": [
+      "都子"
+     ]
+    },
+    {
+     "reading": "ふじみやこ",
+     "ja": [
+      "藤都子"
+     ],
+     "zh": [
+      "都子"
+     ]
+    },
+    {
+     "reading": "みゃーこ",
+     "ja": [
+      "みゃーこ",
+      "ミャーコ"
+     ],
+     "zh": [
+      "都子",
+      "都子酱"
+     ]
+    },
+    {
+     "reading": "みゃー",
+     "ja": [
+      "みゃー"
+     ],
+     "zh": [
+      "都子"
+     ]
+    },
+    {
+     "reading": "みゃこ",
+     "ja": [
+      "みゃこ",
+      "ミャコ"
+     ],
+     "zh": [
+      "都子"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [
+    {
+     "base": "みやこ",
+     "suffixes": {
+      "ちゃん": [
+       "都子酱",
+       "都子"
+      ],
+      "さん": [
+       "都子"
+      ],
+      "せんせい": [
+       "都子老师"
+      ]
+     }
+    },
+    {
+     "base": "みゃーこ",
+     "suffixes": {
+      "ちゃん": [
+       "都子酱",
+       "都子"
+      ],
+      "さん": [
+       "都子"
+      ]
+     }
+    }
+   ],
+   "special": [],
+   "derived": [
+    {
+     "reading": "みやこ",
+     "ja": [
+      "みやこ",
+      "ミヤコ",
+      "都子"
+     ],
+     "zh": [
+      "都子"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "ふじみやこ",
+     "ja": [
+      "藤都子"
+     ],
+     "zh": [
+      "都子"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "みゃーこ",
+     "ja": [
+      "みゃーこ",
+      "ミャーコ"
+     ],
+     "zh": [
+      "都子",
+      "都子酱"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "みゃー",
+     "ja": [
+      "みゃー"
+     ],
+     "zh": [
+      "都子"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "みゃこ",
+     "ja": [
+      "みゃこ",
+      "ミャコ"
+     ],
+     "zh": [
+      "都子"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "みやこちゃん",
+     "ja": [
+      "みやこちゃん",
+      "ミヤコちゃん",
+      "都子ちゃん",
+      "みやこちゃん"
+     ],
+     "zh": [
+      "都子酱",
+      "都子"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "みやこさん",
+     "ja": [
+      "みやこさん",
+      "ミヤコさん",
+      "都子さん",
+      "みやこさん"
+     ],
+     "zh": [
+      "都子"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "みやこせんせい",
+     "ja": [
+      "みやこせんせい",
+      "ミヤコせんせい",
+      "都子せんせい",
+      "みやこせんせい"
+     ],
+     "zh": [
+      "都子老师"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "みゃーこちゃん",
+     "ja": [
+      "みゃーこちゃん",
+      "ミャーコちゃん",
+      "みゃーこちゃん"
+     ],
+     "zh": [
+      "都子酱",
+      "都子"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "みゃーこさん",
+     "ja": [
+      "みゃーこさん",
+      "ミャーコさん",
+      "みゃーこさん"
+     ],
+     "zh": [
+      "都子"
+     ],
+     "source": "suffix"
+    }
+   ],
+   "asr_words_ja": [
+    "みやこ",
+    "ミヤコ",
+    "都子",
+    "藤都子",
+    "みゃーこ",
+    "ミャーコ",
+    "みゃー",
+    "みゃこ",
+    "ミャコ",
+    "みやこちゃん",
+    "ミヤコちゃん",
+    "都子ちゃん",
+    "みやこさん",
+    "ミヤコさん",
+    "都子さん",
+    "みやこせんせい",
+    "ミヤコせんせい",
+    "都子せんせい",
+    "みゃーこちゃん",
+    "ミャーコちゃん",
+    "みゃーこさん",
+    "ミャーコさん"
+   ],
+   "error_forms": [
+    {
+     "reading": "みよこ",
+     "ja": [
+      "美代子"
+     ]
+    },
+    {
+     "reading": "みやこ",
+     "ja": [
+      "美夜子"
+     ]
+    },
+    {
+     "reading": "みやこ",
+     "ja": [
+      "宮子"
+     ]
+    },
+    {
+     "reading": "ふじみやこ",
+     "ja": [
+      "藤宮子"
+     ]
+    },
+    {
+     "reading": "みやこ",
+     "ja": [
+      "みや子"
+     ]
+    },
+    {
+     "reading": "ふじのみやこ",
+     "ja": [
+      "富士宮子"
+     ]
+    },
+    {
+     "reading": "みやこせんせい",
+     "ja": [
+      "宮子先生"
+     ]
+    }
+   ],
+   "name_forms_ja": [
+    "みやこ",
+    "ミヤコ",
+    "都子",
+    "藤都子",
+    "みゃーこ",
+    "ミャーコ",
+    "みゃー",
+    "みゃこ",
+    "ミャコ",
+    "みやこちゃん",
+    "ミヤコちゃん",
+    "都子ちゃん",
+    "みやこさん",
+    "ミヤコさん",
+    "都子さん",
+    "みやこせんせい",
+    "ミヤコせんせい",
+    "都子せんせい",
+    "みゃーこちゃん",
+    "ミャーコちゃん",
+    "みゃーこさん",
+    "ミャーコさん",
+    "美代子",
+    "美夜子",
+    "宮子",
+    "藤宮子",
+    "みや子",
+    "富士宮子",
+    "宮子先生"
+   ],
+   "neg_check_forms": [
+    "藤都子",
+    "都子",
+    "みゃーこ",
+    "ミャーコ",
+    "みゃこ",
+    "ミャコ",
+    "みや子",
+    "宮子",
+    "美代子",
+    "美夜子",
+    "藤宮子",
+    "富士宮子",
+    "Miyako",
+    "miyako",
+    "myk",
+    "都子ちゃん",
+    "都子先生",
+    "みやこちゃん",
+    "みやこ先生"
+   ],
+   "readings": [
+    "みやこ",
+    "ふじみやこ",
+    "みゃーこ",
+    "みゃー",
+    "みゃこ",
+    "みやこちゃん",
+    "みやこさん",
+    "みやこせんせい",
+    "みゃーこちゃん",
+    "みゃーこさん"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "都子"
+    ],
+    "aliases": [
+     "都子",
+     "都子酱",
+     "都子老师"
+    ],
+    "variant_zh": {
+     "みやこ": [
+      "都子"
+     ],
+     "みゃーこ": [
+      "都子",
+      "都子酱"
+     ],
+     "みゃこ": [
+      "都子"
+     ],
+     "みゃー": [
+      "都子"
+     ]
+    },
+    "name_forms_zh": [
+     "都子"
+    ]
+   },
+   "en": [
+    "Miyako",
+    "Fujimiya Miyako",
+    "Myako"
+   ]
+  },
+  {
+   "id": "p_yuno",
+   "kind": "person",
+   "canonical_ja": "千石ユノ",
+   "canonical_zh": [
+    "由乃"
+   ],
+   "units": [
+    {
+     "reading": "ゆの",
+     "ja": [
+      "ゆの",
+      "ユノ"
+     ],
+     "zh": [
+      "由乃"
+     ]
+    },
+    {
+     "reading": "せんごくゆの",
+     "ja": [
+      "千石ユノ",
+      "千石ユーノ"
+     ],
+     "zh": [
+      "由乃"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [
+    {
+     "base": "ゆの",
+     "suffixes": {
+      "ち": [
+       "由乃亲"
+      ],
+      "っち": [
+       "由乃亲"
+      ],
+      "ちゃん": [
+       "由乃酱",
+       "由乃"
+      ],
+      "さん": [
+       "由乃"
+      ]
+     }
+    }
+   ],
+   "special": [],
+   "derived": [
+    {
+     "reading": "ゆの",
+     "ja": [
+      "ゆの",
+      "ユノ"
+     ],
+     "zh": [
+      "由乃"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "せんごくゆの",
+     "ja": [
+      "千石ユノ",
+      "千石ユーノ"
+     ],
+     "zh": [
+      "由乃"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "ゆのち",
+     "ja": [
+      "ゆのち",
+      "ユノち",
+      "ゆのち"
+     ],
+     "zh": [
+      "由乃亲"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "ゆのっち",
+     "ja": [
+      "ゆのっち",
+      "ユノっち",
+      "ゆのっち"
+     ],
+     "zh": [
+      "由乃亲"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "ゆのちゃん",
+     "ja": [
+      "ゆのちゃん",
+      "ユノちゃん",
+      "ゆのちゃん"
+     ],
+     "zh": [
+      "由乃酱",
+      "由乃"
+     ],
+     "source": "suffix"
+    },
+    {
+     "reading": "ゆのさん",
+     "ja": [
+      "ゆのさん",
+      "ユノさん",
+      "ゆのさん"
+     ],
+     "zh": [
+      "由乃"
+     ],
+     "source": "suffix"
+    }
+   ],
+   "asr_words_ja": [
+    "ゆの",
+    "ユノ",
+    "千石ユノ",
+    "千石ユーノ",
+    "ゆのち",
+    "ユノち",
+    "ゆのっち",
+    "ユノっち",
+    "ゆのちゃん",
+    "ユノちゃん",
+    "ゆのさん",
+    "ユノさん"
+   ],
+   "error_forms": [
+    {
+     "reading": "ゆうの",
+     "ja": [
+      "優乃"
+     ]
+    },
+    {
+     "reading": "ゆの",
+     "ja": [
+      "柚乃"
+     ]
+    },
+    {
+     "reading": "ゆうの",
+     "ja": [
+      "悠乃"
+     ]
+    },
+    {
+     "reading": "けつの",
+     "ja": [
+      "結乃"
+     ]
+    },
+    {
+     "reading": "ゆめの",
+     "ja": [
+      "梦乃"
+     ]
+    },
+    {
+     "reading": "ゆの",
+     "ja": [
+      "ユ野"
+     ]
+    },
+    {
+     "reading": "ゆの",
+     "ja": [
+      "ゆ野"
+     ]
+    },
+    {
+     "reading": "ゆの",
+     "ja": [
+      "ユの"
+     ]
+    }
+   ],
+   "name_forms_ja": [
+    "ゆの",
+    "ユノ",
+    "千石ユノ",
+    "千石ユーノ",
+    "ゆのち",
+    "ユノち",
+    "ゆのっち",
+    "ユノっち",
+    "ゆのちゃん",
+    "ユノちゃん",
+    "ゆのさん",
+    "ユノさん",
+    "優乃",
+    "柚乃",
+    "悠乃",
+    "結乃",
+    "梦乃",
+    "ユ野",
+    "ゆ野",
+    "ユの"
+   ],
+   "neg_check_forms": [
+    "千石ユノ",
+    "千石ユーノ",
+    "ユノち",
+    "ユノっち",
+    "ゆのち",
+    "ゆのっち",
+    "ゆのちゃん",
+    "ユノちゃん",
+    "由乃",
+    "柚乃",
+    "優乃",
+    "悠乃",
+    "結乃",
+    "ゆ野",
+    "ユ野",
+    "Yuno",
+    "yuno",
+    "YUNO"
+   ],
+   "readings": [
+    "ゆの",
+    "せんごくゆの",
+    "ゆのち",
+    "ゆのっち",
+    "ゆのちゃん",
+    "ゆのさん"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "由乃"
+    ],
+    "aliases": [
+     "由乃",
+     "由乃亲",
+     "由乃酱"
+    ],
+    "variant_zh": {
+     "ゆの": [
+      "由乃"
+     ],
+     "ゆのち": [
+      "由乃亲",
+      "由乃"
+     ],
+     "ゆのっち": [
+      "由乃亲",
+      "由乃"
+     ],
+     "ゆのちゃん": [
+      "由乃酱",
+      "由乃"
+     ]
+    },
+    "name_forms_zh": [
+     "由乃",
+     "由乃亲",
+     "由乃酱"
+    ]
+   },
+   "en": [
+    "Yuno",
+    "Sengoku Yuno"
+   ]
+  },
+  {
+   "id": "b_popipa",
+   "kind": "band",
+   "canonical_ja": "Poppin'Party",
+   "canonical_zh": [
+    "Poppin'Party"
+   ],
+   "units": [
+    {
+     "reading": "ぽっぴんぱーてぃ",
+     "ja": [
+      "ポッピンパーティ",
+      "ポッピンパーティー",
+      "ポッピン・パーティ",
+      "Poppin'Party",
+      "Poppin Party"
+     ],
+     "zh": [
+      "Poppin'Party",
+      "Poppin Party"
+     ]
+    },
+    {
+     "reading": "ぽぴぱ",
+     "ja": [
+      "ポピパ",
+      "Popipa"
+     ],
+     "zh": [
+      "Popipa",
+      "Poppin'Party"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "ぽっぴんぱーてぃ",
+     "ja": [
+      "ポッピンパーティ",
+      "ポッピンパーティー",
+      "ポッピン・パーティ",
+      "Poppin'Party",
+      "Poppin Party"
+     ],
+     "zh": [
+      "Poppin'Party",
+      "Poppin Party"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "ぽぴぱ",
+     "ja": [
+      "ポピパ",
+      "Popipa"
+     ],
+     "zh": [
+      "Popipa",
+      "Poppin'Party"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "ポッピンパーティ",
+    "ポッピンパーティー",
+    "ポッピン・パーティ",
+    "Poppin'Party",
+    "Poppin Party",
+    "ポピパ",
+    "Popipa"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "ポッピンパーティ",
+    "ポッピンパーティー",
+    "ポッピン・パーティ",
+    "Poppin'Party",
+    "Poppin Party",
+    "ポピパ",
+    "Popipa"
+   ],
+   "neg_check_forms": [
+    "Poppin'Party",
+    "Poppin Party",
+    "POPPIN'PARTY",
+    "Popipa",
+    "ポッピンパーティ",
+    "ポッピンパーティー",
+    "ポッピン・パーティ",
+    "ポピパ"
+   ],
+   "readings": [
+    "ぽっぴんぱーてぃ",
+    "ぽぴぱ"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "Poppin'Party"
+    ],
+    "aliases": [
+     "Poppin'Party",
+     "Poppin Party",
+     "Popipa",
+     "PoppinParty"
+    ],
+    "variant_zh": {
+     "ぽっぴんぱーてぃ": [
+      "Poppin'Party",
+      "Poppin Party",
+      "PoppinParty"
+     ],
+     "ぽぴぱ": [
+      "Popipa",
+      "Poppin'Party",
+      "Poppin Party"
+     ]
+    },
+    "name_forms_zh": [
+     "Poppin'Party",
+     "Poppin Party",
+     "PoppinParty",
+     "Popipa"
+    ]
+   },
+   "en": [
+    "Poppin'Party",
+    "Poppin Party",
+    "Popipa"
+   ]
+  },
+  {
+   "id": "b_afterglow",
+   "kind": "band",
+   "canonical_ja": "Afterglow",
+   "canonical_zh": [
+    "Afterglow"
+   ],
+   "units": [
+    {
+     "reading": "あふたーぐろう",
+     "ja": [
+      "アフターグロウ",
+      "アフターグロー",
+      "アフタグロウ",
+      "Afterglow"
+     ],
+     "zh": [
+      "Afterglow"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "あふたーぐろう",
+     "ja": [
+      "アフターグロウ",
+      "アフターグロー",
+      "アフタグロウ",
+      "Afterglow"
+     ],
+     "zh": [
+      "Afterglow"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "アフターグロウ",
+    "アフターグロー",
+    "アフタグロウ",
+    "Afterglow"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "アフターグロウ",
+    "アフターグロー",
+    "アフタグロウ",
+    "Afterglow"
+   ],
+   "neg_check_forms": [
+    "Afterglow",
+    "AFTERGLOW",
+    "アフターグロウ",
+    "アフターグロー",
+    "アフタグロウ",
+    "アフターグロ"
+   ],
+   "readings": [
+    "あふたーぐろう"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "Afterglow"
+    ],
+    "aliases": [
+     "Afterglow"
+    ],
+    "variant_zh": {
+     "あふたーぐろう": [
+      "Afterglow"
+     ]
+    },
+    "name_forms_zh": [
+     "Afterglow"
+    ]
+   },
+   "en": [
+    "Afterglow"
+   ]
+  },
+  {
+   "id": "b_pastel",
+   "kind": "band",
+   "canonical_ja": "Pastel*Palettes",
+   "canonical_zh": [
+    "Pastel*Palettes"
+   ],
+   "units": [
+    {
+     "reading": "ぱすてるぱれっと",
+     "ja": [
+      "パステルパレット",
+      "パステル・パレット",
+      "Pastel*Palettes",
+      "Pastel Palettes"
+     ],
+     "zh": [
+      "Pastel*Palettes",
+      "Pastel Palettes"
+     ]
+    },
+    {
+     "reading": "ぱすぱれ",
+     "ja": [
+      "パスパレ",
+      "PasuPare",
+      "Pasupare"
+     ],
+     "zh": [
+      "Pasupare",
+      "Pastel*Palettes"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "ぱすてるぱれっと",
+     "ja": [
+      "パステルパレット",
+      "パステル・パレット",
+      "Pastel*Palettes",
+      "Pastel Palettes"
+     ],
+     "zh": [
+      "Pastel*Palettes",
+      "Pastel Palettes"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "ぱすぱれ",
+     "ja": [
+      "パスパレ",
+      "PasuPare",
+      "Pasupare"
+     ],
+     "zh": [
+      "Pasupare",
+      "Pastel*Palettes"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "パステルパレット",
+    "パステル・パレット",
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "パスパレ",
+    "PasuPare",
+    "Pasupare"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "パステルパレット",
+    "パステル・パレット",
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "パスパレ",
+    "PasuPare",
+    "Pasupare"
+   ],
+   "neg_check_forms": [
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "PASTEL*PALETTES",
+    "パステルパレット",
+    "パステル・パレット",
+    "パスパレ",
+    "パステルパレッツ",
+    "PasuPare",
+    "Pasupare"
+   ],
+   "readings": [
+    "ぱすてるぱれっと",
+    "ぱすぱれ"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "Pastel*Palettes"
+    ],
+    "aliases": [
+     "Pastel*Palettes",
+     "Pastel Palettes",
+     "Pasupare",
+     "PastelPalettes",
+     "PasuPare"
+    ],
+    "variant_zh": {
+     "ぱすてるぱれっと": [
+      "Pastel*Palettes",
+      "Pastel Palettes",
+      "PastelPalettes"
+     ],
+     "ぱすぱれ": [
+      "Pasupare",
+      "PasuPare",
+      "Pastel*Palettes",
+      "Pastel Palettes"
+     ]
+    },
+    "name_forms_zh": [
+     "Pastel*Palettes",
+     "Pastel Palettes",
+     "PastelPalettes",
+     "Pasupare",
+     "PasuPare"
+    ]
+   },
+   "en": [
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "Pasupare",
+    "PasuPare"
+   ]
+  },
+  {
+   "id": "b_roselia",
+   "kind": "band",
+   "canonical_ja": "Roselia",
+   "canonical_zh": [
+    "Roselia"
+   ],
+   "units": [
+    {
+     "reading": "ろぜりあ",
+     "ja": [
+      "ロゼリア",
+      "ロゼリヤ",
+      "Roselia"
+     ],
+     "zh": [
+      "Roselia"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "ろぜりあ",
+     "ja": [
+      "ロゼリア",
+      "ロゼリヤ",
+      "Roselia"
+     ],
+     "zh": [
+      "Roselia"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "ロゼリア",
+    "ロゼリヤ",
+    "Roselia"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "ロゼリア",
+    "ロゼリヤ",
+    "Roselia"
+   ],
+   "neg_check_forms": [
+    "Roselia",
+    "ROSELIA",
+    "ロゼリア",
+    "ロゼリヤ"
+   ],
+   "readings": [
+    "ろぜりあ"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "Roselia"
+    ],
+    "aliases": [
+     "Roselia"
+    ],
+    "variant_zh": {
+     "ろぜりあ": [
+      "Roselia"
+     ]
+    },
+    "name_forms_zh": [
+     "Roselia"
+    ]
+   },
+   "en": [
+    "Roselia"
+   ]
+  },
+  {
+   "id": "b_harohapi",
+   "kind": "band",
+   "canonical_ja": "Hello, Happy World!",
+   "canonical_zh": [
+    "Hello, Happy World!"
+   ],
+   "units": [
+    {
+     "reading": "はろーはっぴーわーるど",
+     "ja": [
+      "ハローハッピーワールド",
+      "ハロー・ハッピー・ワールド",
+      "Hello, Happy World!",
+      "Hello Happy World"
+     ],
+     "zh": [
+      "Hello, Happy World!",
+      "Hello Happy World"
+     ]
+    },
+    {
+     "reading": "はろはぴ",
+     "ja": [
+      "ハロハピ",
+      "HaroHapi"
+     ],
+     "zh": [
+      "HaroHapi",
+      "Hello, Happy World!"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "はろーはっぴーわーるど",
+     "ja": [
+      "ハローハッピーワールド",
+      "ハロー・ハッピー・ワールド",
+      "Hello, Happy World!",
+      "Hello Happy World"
+     ],
+     "zh": [
+      "Hello, Happy World!",
+      "Hello Happy World"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "はろはぴ",
+     "ja": [
+      "ハロハピ",
+      "HaroHapi"
+     ],
+     "zh": [
+      "HaroHapi",
+      "Hello, Happy World!"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "ハローハッピーワールド",
+    "ハロー・ハッピー・ワールド",
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "ハロハピ",
+    "HaroHapi"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "ハローハッピーワールド",
+    "ハロー・ハッピー・ワールド",
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "ハロハピ",
+    "HaroHapi"
+   ],
+   "neg_check_forms": [
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "ハローハッピーワールド",
+    "ハロー・ハッピー・ワールド",
+    "ハロハピ",
+    "HaroHapi"
+   ],
+   "readings": [
+    "はろーはっぴーわーるど",
+    "はろはぴ"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "Hello, Happy World!"
+    ],
+    "aliases": [
+     "Hello, Happy World!",
+     "Hello Happy World",
+     "HaroHapi",
+     "Hello,Happy World!",
+     "Haro Hapi"
+    ],
+    "variant_zh": {
+     "はろーはっぴーわーるど": [
+      "Hello, Happy World!",
+      "Hello Happy World",
+      "Hello,Happy World!"
+     ],
+     "はろはぴ": [
+      "HaroHapi",
+      "Haro Hapi",
+      "Hello, Happy World!",
+      "Hello Happy World"
+     ]
+    },
+    "name_forms_zh": [
+     "Hello, Happy World!",
+     "Hello Happy World",
+     "Hello,Happy World!",
+     "HaroHapi",
+     "Haro Hapi"
+    ]
+   },
+   "en": [
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "HaroHapi"
+   ]
+  },
+  {
+   "id": "b_morfonica",
+   "kind": "band",
+   "canonical_ja": "Morfonica",
+   "canonical_zh": [
+    "Morfonica"
+   ],
+   "units": [
+    {
+     "reading": "もるふぉにか",
+     "ja": [
+      "モルフォニカ",
+      "Morfonica"
+     ],
+     "zh": [
+      "Morfonica"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "もるふぉにか",
+     "ja": [
+      "モルフォニカ",
+      "Morfonica"
+     ],
+     "zh": [
+      "Morfonica"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "モルフォニカ",
+    "Morfonica"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "モルフォニカ",
+    "Morfonica"
+   ],
+   "neg_check_forms": [
+    "Morfonica",
+    "MORFONICA",
+    "モルフォニカ",
+    "モルフォニガ"
+   ],
+   "readings": [
+    "もるふぉにか"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "Morfonica"
+    ],
+    "aliases": [
+     "Morfonica"
+    ],
+    "variant_zh": {
+     "もるふぉにか": [
+      "Morfonica"
+     ]
+    },
+    "name_forms_zh": [
+     "Morfonica"
+    ]
+   },
+   "en": [
+    "Morfonica"
+   ]
+  },
+  {
+   "id": "b_ras",
+   "kind": "band",
+   "canonical_ja": "RAISE A SUILEN",
+   "canonical_zh": [
+    "RAISE A SUILEN"
+   ],
+   "units": [
+    {
+     "reading": "れいずあすいれん",
+     "ja": [
+      "レイズアスイレン",
+      "レイズ・ア・スイレン",
+      "RAISE A SUILEN"
+     ],
+     "zh": [
+      "RAISE A SUILEN"
+     ]
+    },
+    {
+     "reading": "れいず",
+     "ja": [
+      "レイズ",
+      "RAS"
+     ],
+     "zh": [
+      "RAISE A SUILEN",
+      "RAS"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "れいずあすいれん",
+     "ja": [
+      "レイズアスイレン",
+      "レイズ・ア・スイレン",
+      "RAISE A SUILEN"
+     ],
+     "zh": [
+      "RAISE A SUILEN"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "れいず",
+     "ja": [
+      "レイズ",
+      "RAS"
+     ],
+     "zh": [
+      "RAISE A SUILEN",
+      "RAS"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "レイズアスイレン",
+    "レイズ・ア・スイレン",
+    "RAISE A SUILEN",
+    "レイズ",
+    "RAS"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "レイズアスイレン",
+    "レイズ・ア・スイレン",
+    "RAISE A SUILEN",
+    "レイズ",
+    "RAS"
+   ],
+   "neg_check_forms": [
+    "RAISE A SUILEN",
+    "Raise A Suilen",
+    "レイズアスイレン",
+    "レイズ・ア・スイレン",
+    "RAS"
+   ],
+   "readings": [
+    "れいずあすいれん",
+    "れいず"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "RAISE A SUILEN"
+    ],
+    "aliases": [
+     "RAISE A SUILEN",
+     "RAS",
+     "Raise A Suilen"
+    ],
+    "variant_zh": {
+     "れいずあすいれん": [
+      "RAISE A SUILEN",
+      "Raise A Suilen",
+      "RAS"
+     ],
+     "れいず": [
+      "RAISE A SUILEN",
+      "Raise A Suilen",
+      "RAS"
+     ]
+    },
+    "name_forms_zh": [
+     "RAISE A SUILEN",
+     "Raise A Suilen",
+     "RAS"
+    ]
+   },
+   "en": [
+    "RAISE A SUILEN",
+    "Raise A Suilen",
+    "RAS"
+   ]
+  },
+  {
+   "id": "b_mygo",
+   "kind": "band",
+   "canonical_ja": "MyGO!!!!!",
+   "canonical_zh": [
+    "MyGO!!!!!"
+   ],
+   "units": [
+    {
+     "reading": "まいごー",
+     "ja": [
+      "マイゴー",
+      "MyGO!!!!!",
+      "MyGO"
+     ],
+     "zh": [
+      "MyGO!!!!!",
+      "MyGO"
+     ]
+    },
+    {
+     "reading": "まいご",
+     "ja": [
+      "マイゴ"
+     ],
+     "zh": [
+      "MyGO!!!!!",
+      "MyGO"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "まいごー",
+     "ja": [
+      "マイゴー",
+      "MyGO!!!!!",
+      "MyGO"
+     ],
+     "zh": [
+      "MyGO!!!!!",
+      "MyGO"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "まいご",
+     "ja": [
+      "マイゴ"
+     ],
+     "zh": [
+      "MyGO!!!!!",
+      "MyGO"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "マイゴー",
+    "MyGO!!!!!",
+    "MyGO",
+    "マイゴ"
+   ],
+   "error_forms": [
+    {
+     "reading": "まいご",
+     "ja": [
+      "迷子"
+     ]
+    }
+   ],
+   "name_forms_ja": [
+    "マイゴー",
+    "MyGO!!!!!",
+    "MyGO",
+    "マイゴ",
+    "迷子"
+   ],
+   "neg_check_forms": [
+    "MyGO!!!!!",
+    "MyGO",
+    "MYGO",
+    "マイゴー",
+    "マイゴ"
+   ],
+   "readings": [
+    "まいごー",
+    "まいご"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "MyGO!!!!!"
+    ],
+    "aliases": [
+     "MyGO!!!!!",
+     "MyGO"
+    ],
+    "variant_zh": {
+     "まいごー": [
+      "MyGO!!!!!",
+      "MyGO"
+     ],
+     "まいご": [
+      "MyGO!!!!!",
+      "MyGO"
+     ]
+    },
+    "name_forms_zh": [
+     "MyGO!!!!!",
+     "MyGO"
+    ]
+   },
+   "en": [
+    "MyGO!!!!!",
+    "MyGO"
+   ]
+  },
+  {
+   "id": "b_avemujica",
+   "kind": "band",
+   "canonical_ja": "Ave Mujica",
+   "canonical_zh": [
+    "Ave Mujica"
+   ],
+   "units": [
+    {
+     "reading": "あゔぇむじか",
+     "ja": [
+      "アヴェムジカ",
+      "アヴェ・ムジカ",
+      "Ave Mujica",
+      "AveMujica"
+     ],
+     "zh": [
+      "Ave Mujica"
+     ]
+    },
+    {
+     "reading": "あべむじか",
+     "ja": [
+      "アベムジカ"
+     ],
+     "zh": [
+      "Ave Mujica"
+     ]
+    },
+    {
+     "reading": "あむじか",
+     "ja": [
+      "アムジカ"
+     ],
+     "zh": [
+      "Ave Mujica"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "あゔぇむじか",
+     "ja": [
+      "アヴェムジカ",
+      "アヴェ・ムジカ",
+      "Ave Mujica",
+      "AveMujica"
+     ],
+     "zh": [
+      "Ave Mujica"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "あべむじか",
+     "ja": [
+      "アベムジカ"
+     ],
+     "zh": [
+      "Ave Mujica"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "あむじか",
+     "ja": [
+      "アムジカ"
+     ],
+     "zh": [
+      "Ave Mujica"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "アヴェムジカ",
+    "アヴェ・ムジカ",
+    "Ave Mujica",
+    "AveMujica",
+    "アベムジカ",
+    "アムジカ"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "アヴェムジカ",
+    "アヴェ・ムジカ",
+    "Ave Mujica",
+    "AveMujica",
+    "アベムジカ",
+    "アムジカ"
+   ],
+   "neg_check_forms": [
+    "Ave Mujica",
+    "AveMujica",
+    "アヴェムジカ",
+    "アベムジカ",
+    "アムジカ",
+    "アヴェ・ムジカ"
+   ],
+   "readings": [
+    "あゔぇむじか",
+    "あべむじか",
+    "あむじか"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "Ave Mujica"
+    ],
+    "aliases": [
+     "Ave Mujica",
+     "AveMujica"
+    ],
+    "variant_zh": {
+     "あゔぇむじか": [
+      "Ave Mujica",
+      "AveMujica"
+     ],
+     "あべむじか": [
+      "Ave Mujica",
+      "AveMujica"
+     ],
+     "あむじか": [
+      "Ave Mujica",
+      "AveMujica"
+     ]
+    },
+    "name_forms_zh": [
+     "Ave Mujica",
+     "AveMujica"
+    ]
+   },
+   "en": [
+    "Ave Mujica",
+    "AveMujica"
+   ]
+  },
+  {
+   "id": "b_mewtype",
+   "kind": "band",
+   "canonical_ja": "夢限大みゅーたいぷ",
+   "canonical_zh": [
+    "梦限大MewType",
+    "梦限大"
+   ],
+   "units": [
+    {
+     "reading": "むげんだい",
+     "ja": [
+      "夢限大",
+      "無限大",
+      "ムゲンダイ"
+     ],
+     "zh": [
+      "梦限大"
+     ]
+    },
+    {
+     "reading": "みゅーたいぷ",
+     "ja": [
+      "ミュータイプ",
+      "みゅーたいぷ",
+      "MewType"
+     ],
+     "zh": [
+      "MewType",
+      "梦限大MewType"
+     ]
+    },
+    {
+     "reading": "ゆめみた",
+     "ja": [
+      "ゆめみた",
+      "夢見た",
+      "ゆめみたー"
+     ],
+     "zh": [
+      "梦限大",
+      "梦限大MewType"
+     ]
+    }
+   ],
+   "compose": [
+    {
+     "parts": [
+      "むげんだい",
+      "みゅーたいぷ"
+     ],
+     "ja": [
+      "夢限大みゅーたいぷ",
+      "無限大ミュータイプ",
+      "夢限大ミュータイプ",
+      "無限大宮タイプ",
+      "Mugendai MewType",
+      "夢限大MewType"
+     ],
+     "zh": [
+      "梦限大MewType",
+      "梦限大Mewtype",
+      "梦限大"
+     ]
+    }
+   ],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "むげんだい",
+     "ja": [
+      "夢限大",
+      "無限大",
+      "ムゲンダイ"
+     ],
+     "zh": [
+      "梦限大"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "みゅーたいぷ",
+     "ja": [
+      "ミュータイプ",
+      "みゅーたいぷ",
+      "MewType"
+     ],
+     "zh": [
+      "MewType",
+      "梦限大MewType"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "ゆめみた",
+     "ja": [
+      "ゆめみた",
+      "夢見た",
+      "ゆめみたー"
+     ],
+     "zh": [
+      "梦限大",
+      "梦限大MewType"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "むげんだいみゅーたいぷ",
+     "ja": [
+      "夢限大みゅーたいぷ",
+      "無限大ミュータイプ",
+      "夢限大ミュータイプ",
+      "無限大宮タイプ",
+      "Mugendai MewType",
+      "夢限大MewType"
+     ],
+     "zh": [
+      "梦限大MewType",
+      "梦限大Mewtype",
+      "梦限大"
+     ],
+     "source": "compose"
+    }
+   ],
+   "asr_words_ja": [
+    "夢限大",
+    "無限大",
+    "ムゲンダイ",
+    "ミュータイプ",
+    "みゅーたいぷ",
+    "MewType",
+    "ゆめみた",
+    "夢見た",
+    "ゆめみたー",
+    "夢限大みゅーたいぷ",
+    "無限大ミュータイプ",
+    "夢限大ミュータイプ",
+    "無限大宮タイプ",
+    "Mugendai MewType",
+    "夢限大MewType"
+   ],
+   "error_forms": [
+    {
+     "reading": "むげんだい",
+     "ja": [
+      "無限代"
+     ]
+    },
+    {
+     "reading": "むげんだい",
+     "ja": [
+      "無現代"
+     ]
+    },
+    {
+     "reading": "むげんだいみゅーたいぷ",
+     "ja": [
+      "無限代ミュータイプ"
+     ]
+    },
+    {
+     "reading": "むげんだいみゅーたいぷ",
+     "ja": [
+      "ムゲンダイミュータイプ"
+     ]
+    }
+   ],
+   "name_forms_ja": [
+    "夢限大",
+    "無限大",
+    "ムゲンダイ",
+    "ミュータイプ",
+    "みゅーたいぷ",
+    "MewType",
+    "ゆめみた",
+    "夢見た",
+    "ゆめみたー",
+    "夢限大みゅーたいぷ",
+    "無限大ミュータイプ",
+    "夢限大ミュータイプ",
+    "無限大宮タイプ",
+    "Mugendai MewType",
+    "夢限大MewType",
+    "無限代",
+    "無現代",
+    "無限代ミュータイプ",
+    "ムゲンダイミュータイプ"
+   ],
+   "neg_check_forms": [
+    "夢限大みゅーたいぷ",
+    "夢限大MewType",
+    "MewType",
+    "MUGENDAI MYU-TYPE",
+    "無限大ミュータイプ",
+    "無限大宮タイプ",
+    "夢限大ミュータイプ",
+    "無限代ミュータイプ",
+    "無現代",
+    "ミュータイプ",
+    "ゆめみた",
+    "めうたいぷ",
+    "ムゲンダイミュータイプ",
+    "夢限大"
+   ],
+   "readings": [
+    "むげんだい",
+    "みゅーたいぷ",
+    "ゆめみた",
+    "むげんだいみゅーたいぷ"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "梦限大MewType",
+     "梦限大"
+    ],
+    "aliases": [
+     "梦限大",
+     "MewType",
+     "梦限大MewType",
+     "梦限大Mewtype",
+     "Mewtype"
+    ],
+    "variant_zh": {
+     "むげんだいみゅーたいぷ": [
+      "梦限大MewType",
+      "梦限大Mewtype",
+      "梦限大 MewType",
+      "梦限大"
+     ],
+     "みゅーたいぷ": [
+      "MewType",
+      "Mewtype",
+      "梦限大MewType"
+     ],
+     "ゆめみた": [
+      "梦限大",
+      "梦限大MewType",
+      "梦限大Mewtype"
+     ],
+     "むげんだい": [
+      "梦限大",
+      "梦限大MewType",
+      "梦限大Mewtype"
+     ]
+    },
+    "name_forms_zh": [
+     "梦限大",
+     "MewType",
+     "Mewtype"
+    ]
+   },
+   "en": [
+    "Mugendai MewType",
+    "MewType",
+    "Yumemita"
+   ]
+  },
+  {
+   "id": "b_millsage",
+   "kind": "band",
+   "canonical_ja": "millsage",
+   "canonical_zh": [
+    "millsage"
+   ],
+   "units": [
+    {
+     "reading": "みるせーじ",
+     "ja": [
+      "ミルセージ",
+      "ミルセイジ",
+      "millsage",
+      "Millsage"
+     ],
+     "zh": [
+      "millsage"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "みるせーじ",
+     "ja": [
+      "ミルセージ",
+      "ミルセイジ",
+      "millsage",
+      "Millsage"
+     ],
+     "zh": [
+      "millsage"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "ミルセージ",
+    "ミルセイジ",
+    "millsage",
+    "Millsage"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "ミルセージ",
+    "ミルセイジ",
+    "millsage",
+    "Millsage"
+   ],
+   "neg_check_forms": [
+    "millsage",
+    "Millsage",
+    "MILLSAGE",
+    "ミルセージ",
+    "ミルセイジ"
+   ],
+   "readings": [
+    "みるせーじ"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "millsage"
+    ],
+    "aliases": [
+     "millsage",
+     "Millsage"
+    ],
+    "variant_zh": {
+     "みるせーじ": [
+      "millsage",
+      "Millsage"
+     ]
+    },
+    "name_forms_zh": [
+     "millsage",
+     "Millsage"
+    ]
+   },
+   "en": [
+    "millsage",
+    "Millsage"
+   ]
+  },
+  {
+   "id": "b_ikka",
+   "kind": "band",
+   "canonical_ja": "一家Dumb Rock!",
+   "canonical_zh": [
+    "一家Dumb Rock!"
+   ],
+   "units": [
+    {
+     "reading": "いっかだむろっく",
+     "ja": [
+      "一家ダムロック",
+      "いっかダムロック",
+      "一家Dumb Rock!",
+      "一家DumbRock"
+     ],
+     "zh": [
+      "一家Dumb Rock!"
+     ]
+    },
+    {
+     "reading": "だむろっく",
+     "ja": [
+      "ダムロック",
+      "Dumb Rock"
+     ],
+     "zh": [
+      "一家Dumb Rock!"
+     ]
+    }
+   ],
+   "compose": [],
+   "suffix": [],
+   "special": [],
+   "derived": [
+    {
+     "reading": "いっかだむろっく",
+     "ja": [
+      "一家ダムロック",
+      "いっかダムロック",
+      "一家Dumb Rock!",
+      "一家DumbRock"
+     ],
+     "zh": [
+      "一家Dumb Rock!"
+     ],
+     "source": "unit"
+    },
+    {
+     "reading": "だむろっく",
+     "ja": [
+      "ダムロック",
+      "Dumb Rock"
+     ],
+     "zh": [
+      "一家Dumb Rock!"
+     ],
+     "source": "unit"
+    }
+   ],
+   "asr_words_ja": [
+    "一家ダムロック",
+    "いっかダムロック",
+    "一家Dumb Rock!",
+    "一家DumbRock",
+    "ダムロック",
+    "Dumb Rock"
+   ],
+   "error_forms": [],
+   "name_forms_ja": [
+    "一家ダムロック",
+    "いっかダムロック",
+    "一家Dumb Rock!",
+    "一家DumbRock",
+    "ダムロック",
+    "Dumb Rock"
+   ],
+   "neg_check_forms": [
+    "一家Dumb Rock!",
+    "一家DumbRock",
+    "一家ダムロック",
+    "いっかダムロック",
+    "ダムロック",
+    "Dumb Rock",
+    "Ikka Dumb Rock"
+   ],
+   "readings": [
+    "いっかだむろっく",
+    "だむろっく"
+   ],
+   "zh": {
+    "canonical_zh": [
+     "一家Dumb Rock!"
+    ],
+    "aliases": [
+     "一家Dumb Rock!",
+     "一家DumbRock",
+     "Ikka Dumb Rock!"
+    ],
+    "variant_zh": {
+     "いっかだむろっく": [
+      "一家Dumb Rock!",
+      "一家DumbRock",
+      "Ikka Dumb Rock!"
+     ],
+     "だむろっく": [
+      "一家Dumb Rock!",
+      "一家DumbRock",
+      "Ikka Dumb Rock!"
+     ]
+    },
+    "name_forms_zh": [
+     "一家Dumb Rock!",
+     "一家DumbRock",
+     "Ikka Dumb Rock!"
+    ]
+   },
+   "en": [
+    "Ikka Dumb Rock!",
+    "Ikka DumbRock",
+    "Dumb Rock"
+   ]
+  }
+ ]
+}

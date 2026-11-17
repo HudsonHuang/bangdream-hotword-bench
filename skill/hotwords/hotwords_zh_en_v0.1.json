@@ -1,0 +1,267 @@
+{
+ "schema": "ymmt-hotwords/zh-en/v0.1",
+ "note": "标准热词（中文/英文）0.1：日文专名 -> 中文规范译名集合 + 英文名集合；供翻译、评测与数据发布",
+ "groups": {
+  "p_arale": {
+   "canonical_ja": "仲町あられ",
+   "canonical_zh": [
+    "阿拉蕾"
+   ],
+   "zh_allowed": [
+    "阿拉蕾",
+    "阿拉蕾酱"
+   ],
+   "en": [
+    "Arale",
+    "Nakamachi Arale",
+    "Arare"
+   ]
+  },
+  "p_nonoka": {
+   "canonical_ja": "宮永ののか",
+   "canonical_zh": [
+    "野乃花"
+   ],
+   "zh_allowed": [
+    "野乃花",
+    "国王",
+    "のの酱"
+   ],
+   "en": [
+    "Nonoka",
+    "Miyanaga Nonoka",
+    "Nono"
+   ]
+  },
+  "p_ritsu": {
+   "canonical_ja": "峰月律",
+   "canonical_zh": [
+    "律"
+   ],
+   "zh_allowed": [
+    "律",
+    "律酱",
+    "师傅"
+   ],
+   "en": [
+    "Ritsu",
+    "Minetsuki Ritsu",
+    "Risshi"
+   ]
+  },
+  "p_miyako": {
+   "canonical_ja": "藤都子",
+   "canonical_zh": [
+    "都子"
+   ],
+   "zh_allowed": [
+    "都子",
+    "都子酱",
+    "都子老师"
+   ],
+   "en": [
+    "Miyako",
+    "Fujimiya Miyako",
+    "Myako"
+   ]
+  },
+  "p_yuno": {
+   "canonical_ja": "千石ユノ",
+   "canonical_zh": [
+    "由乃"
+   ],
+   "zh_allowed": [
+    "由乃",
+    "由乃亲",
+    "由乃酱"
+   ],
+   "en": [
+    "Yuno",
+    "Sengoku Yuno"
+   ]
+  },
+  "b_popipa": {
+   "canonical_ja": "Poppin'Party",
+   "canonical_zh": [
+    "Poppin'Party"
+   ],
+   "zh_allowed": [
+    "Poppin'Party",
+    "Poppin Party",
+    "Popipa",
+    "PoppinParty"
+   ],
+   "en": [
+    "Poppin'Party",
+    "Poppin Party",
+    "Popipa"
+   ]
+  },
+  "b_afterglow": {
+   "canonical_ja": "Afterglow",
+   "canonical_zh": [
+    "Afterglow"
+   ],
+   "zh_allowed": [
+    "Afterglow"
+   ],
+   "en": [
+    "Afterglow"
+   ]
+  },
+  "b_pastel": {
+   "canonical_ja": "Pastel*Palettes",
+   "canonical_zh": [
+    "Pastel*Palettes"
+   ],
+   "zh_allowed": [
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "Pasupare",
+    "PastelPalettes",
+    "PasuPare"
+   ],
+   "en": [
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "Pasupare",
+    "PasuPare"
+   ]
+  },
+  "b_roselia": {
+   "canonical_ja": "Roselia",
+   "canonical_zh": [
+    "Roselia"
+   ],
+   "zh_allowed": [
+    "Roselia"
+   ],
+   "en": [
+    "Roselia"
+   ]
+  },
+  "b_harohapi": {
+   "canonical_ja": "Hello, Happy World!",
+   "canonical_zh": [
+    "Hello, Happy World!"
+   ],
+   "zh_allowed": [
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "HaroHapi",
+    "Hello,Happy World!",
+    "Haro Hapi"
+   ],
+   "en": [
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "HaroHapi"
+   ]
+  },
+  "b_morfonica": {
+   "canonical_ja": "Morfonica",
+   "canonical_zh": [
+    "Morfonica"
+   ],
+   "zh_allowed": [
+    "Morfonica"
+   ],
+   "en": [
+    "Morfonica"
+   ]
+  },
+  "b_ras": {
+   "canonical_ja": "RAISE A SUILEN",
+   "canonical_zh": [
+    "RAISE A SUILEN"
+   ],
+   "zh_allowed": [
+    "RAISE A SUILEN",
+    "RAS",
+    "Raise A Suilen"
+   ],
+   "en": [
+    "RAISE A SUILEN",
+    "Raise A Suilen",
+    "RAS"
+   ]
+  },
+  "b_mygo": {
+   "canonical_ja": "MyGO!!!!!",
+   "canonical_zh": [
+    "MyGO!!!!!"
+   ],
+   "zh_allowed": [
+    "MyGO!!!!!",
+    "MyGO"
+   ],
+   "en": [
+    "MyGO!!!!!",
+    "MyGO"
+   ]
+  },
+  "b_avemujica": {
+   "canonical_ja": "Ave Mujica",
+   "canonical_zh": [
+    "Ave Mujica"
+   ],
+   "zh_allowed": [
+    "Ave Mujica",
+    "AveMujica"
+   ],
+   "en": [
+    "Ave Mujica",
+    "AveMujica"
+   ]
+  },
+  "b_mewtype": {
+   "canonical_ja": "夢限大みゅーたいぷ",
+   "canonical_zh": [
+    "梦限大MewType",
+    "梦限大"
+   ],
+   "zh_allowed": [
+    "梦限大MewType",
+    "梦限大",
+    "MewType",
+    "梦限大Mewtype",
+    "Mewtype"
+   ],
+   "en": [
+    "Mugendai MewType",
+    "MewType",
+    "Yumemita"
+   ]
+  },
+  "b_millsage": {
+   "canonical_ja": "millsage",
+   "canonical_zh": [
+    "millsage"
+   ],
+   "zh_allowed": [
+    "millsage",
+    "Millsage"
+   ],
+   "en": [
+    "millsage",
+    "Millsage"
+   ]
+  },
+  "b_ikka": {
+   "canonical_ja": "一家Dumb Rock!",
+   "canonical_zh": [
+    "一家Dumb Rock!"
+   ],
+   "zh_allowed": [
+    "一家Dumb Rock!",
+    "一家DumbRock",
+    "Ikka Dumb Rock!"
+   ],
+   "en": [
+    "Ikka Dumb Rock!",
+    "Ikka DumbRock",
+    "Dumb Rock"
+   ]
+  }
+ }
+}

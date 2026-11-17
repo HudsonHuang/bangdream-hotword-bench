@@ -1,0 +1,35 @@
+日文专名 → 中文规范译名（翻译/同传评测用）
+仲町あられ = 阿拉蕾
+  # 可接受：阿拉蕾、阿拉蕾酱
+宮永ののか = 野乃花
+  # 可接受：野乃花、国王、のの酱
+峰月律 = 律
+  # 可接受：律、律酱、师傅
+藤都子 = 都子
+  # 可接受：都子、都子酱、都子老师
+千石ユノ = 由乃
+  # 可接受：由乃、由乃亲、由乃酱
+Poppin'Party = Poppin'Party
+  # 可接受：Poppin'Party、Poppin Party、Popipa、PoppinParty
+Afterglow = Afterglow
+  # 可接受：Afterglow
+Pastel*Palettes = Pastel*Palettes
+  # 可接受：Pastel*Palettes、Pastel Palettes、Pasupare、PastelPalettes、PasuPare
+Roselia = Roselia
+  # 可接受：Roselia
+Hello, Happy World! = Hello, Happy World!
+  # 可接受：Hello, Happy World!、Hello Happy World、HaroHapi、Hello,Happy World!、Haro Hapi
+Morfonica = Morfonica
+  # 可接受：Morfonica
+RAISE A SUILEN = RAISE A SUILEN
+  # 可接受：RAISE A SUILEN、RAS、Raise A Suilen
+MyGO!!!!! = MyGO!!!!!
+  # 可接受：MyGO!!!!!、MyGO
+Ave Mujica = Ave Mujica
+  # 可接受：Ave Mujica、AveMujica
+夢限大みゅーたいぷ = 梦限大MewType
+  # 可接受：梦限大、MewType、梦限大MewType、梦限大Mewtype、Mewtype
+millsage = millsage
+  # 可接受：millsage、Millsage
+一家Dumb Rock! = 一家Dumb Rock!
+  # 可接受：一家Dumb Rock!、一家DumbRock、Ikka Dumb Rock!

@@ -1,0 +1,115 @@
+{
+ "schema": "bangdream-hotword-bench/release/v1",
+ "skill_version": "ymmt-hotwords-v0.1",
+ "split": "test-base（单套测试集）",
+ "counts": {
+  "test_base": {
+   "samples": 283,
+   "pos": 141,
+   "neg": 142
+  }
+ },
+ "note": "音频与源视频清单在 Hugging Face 数据集；skill 内只含标注/热词/脚本。",
+ "files": [
+  {
+   "file": "data/stats.json",
+   "bytes": 218,
+   "sha256": "bb50f8d5452afdfbd5d1ce5f7b96f979053697af39799192b87d28fee8f4b5d2"
+  },
+  {
+   "file": "data/test_base.jsonl",
+   "bytes": 237291,
+   "sha256": "adce4572517f807df56cd462d7fc5b68a36055dd0223e24835a63bc687a2e642"
+  },
+  {
+   "file": "hotwords/export/moss_hotwords.csv",
+   "bytes": 2017,
+   "sha256": "33a670950f34a811c5149176ff1923922d078935e8391af7fb1fed765420a420"
+  },
+  {
+   "file": "hotwords/export/qwen_context.txt",
+   "bytes": 1134,
+   "sha256": "51e1bb5a608c9abdd5e20d8556614293ded87b18957a6d0ce173bdd823794e3a"
+  },
+  {
+   "file": "hotwords/export/qwen_vocabulary.json",
+   "bytes": 2958,
+   "sha256": "08a0e1adc51cfd9fc83737aac2b5e9a797915c050a5d63a6c1b6311b047332ed"
+  },
+  {
+   "file": "hotwords/export/volc_context.json",
+   "bytes": 4986,
+   "sha256": "60cc2fb636b1b75c5ae482ba0dcac30307609ecd4cdfd833ac7c706806eaa4f2"
+  },
+  {
+   "file": "hotwords/hotwords_zh_en_v0.1.json",
+   "bytes": 4220,
+   "sha256": "2143a44e2a130201bddbb65442530eb99695b40c9999143bd4d8c34e00154ea0"
+  },
+  {
+   "file": "hotwords/hotwords_zh_en_v0.1.md",
+   "bytes": 1360,
+   "sha256": "ee0947f1f2dda74ceb82800549164118c9476193fa5d31cdd9cee1bce4cf3060"
+  },
+  {
+   "file": "hotwords/mt_glossary.txt",
+   "bytes": 1393,
+   "sha256": "c4d716b438195be52bce3ff55c8d13f9f3f22895825fd53468b0644831a88365"
+  },
+  {
+   "file": "hotwords/reading_index.json",
+   "bytes": 30708,
+   "sha256": "718b3258eaa402ca4af46a299780a61bb2d08eb5df1cd28775903ec2c1405b57"
+  },
+  {
+   "file": "hotwords/ymmt_hotwords_v0.1.json",
+   "bytes": 48722,
+   "sha256": "ef89f4694a9ad1bd340e5d54070eaaf0fc2410e91ba8ebf846bf61bf264ea4fc"
+  },
+  {
+   "file": "hotwords/zh_hotwords.json",
+   "bytes": 7132,
+   "sha256": "bee3ee24cda14b9cad1196018953aa7715434e1b954336685c84d4f8bef0903e"
+  },
+  {
+   "file": "hotwords/zh_hotwords.txt",
+   "bytes": 535,
+   "sha256": "4d009a187f668e9edbb9005c4b7c6cd5e59b74455f41e43310c9362f4e49f37b"
+  },
+  {
+   "file": "scripts/add_names.py",
+   "bytes": 11039,
+   "sha256": "abd4e25f0aa03ad0fb048f8b4d4d82fd20b1a0c28048a5f4040c480793ef8444"
+  },
+  {
+   "file": "scripts/clip_audio.py",
+   "bytes": 3450,
+   "sha256": "6f246c3cba3e102e97a93881c64cdcf53ebc3fd458a91f3b197181a4ef17ee65"
+  },
+  {
+   "file": "scripts/common.py",
+   "bytes": 17835,
+   "sha256": "7fabfd2ebd225f3821ffe6e6b027a3708ddd73f5e2764fa96a23dec0e371e6e6"
+  },
+  {
+   "file": "scripts/eval.py",
+   "bytes": 6031,
+   "sha256": "02738b48be1c1f24b046af44e022b0ddbfda5d7541084ef3d5e1686b62e01b1f"
+  },
+  {
+   "file": "scripts/mine_candidates.py",
+   "bytes": 5176,
+   "sha256": "0c462d47b65c2dffff7e073cb949324e1326c66c2ab6d84b624cfb63de85f1f0"
+  },
+  {
+   "file": "scripts/mt_batches.py",
+   "bytes": 3839,
+   "sha256": "3fdae685c648a07b6d194d9e9d3d7c36ef35c4a56841952d0059443c13431812"
+  },
+  {
+   "file": "scripts/validate_submission.py",
+   "bytes": 2835,
+   "sha256": "b9a5baa5f746e35d4f83a4d66a1bb77e819497982abdfcd9aa763d8cd758d9e5"
+  }
+ ]
+}

@@ -1,0 +1,456 @@
+{
+ "schema": "ymmt-hotwords/zh/v0.1",
+ "note": "翻译/端到端中文侧规范译名：pos 输出命中 aliases 之一算对；neg 输出不得出现该组 name_forms_zh",
+ "groups": {
+  "p_arale": {
+   "canonical_zh": [
+    "阿拉蕾"
+   ],
+   "aliases": [
+    "阿拉蕾",
+    "阿拉蕾酱"
+   ],
+   "variant_zh": {
+    "あられ": [
+     "阿拉蕾",
+     "阿拉蕾酱"
+    ]
+   },
+   "name_forms_zh": [
+    "阿拉蕾"
+   ]
+  },
+  "p_nonoka": {
+   "canonical_zh": [
+    "野乃花"
+   ],
+   "aliases": [
+    "野乃花",
+    "国王",
+    "のの酱"
+   ],
+   "variant_zh": {
+    "ののか": [
+     "野乃花"
+    ],
+    "ののちゃん": [
+     "のの酱",
+     "野乃花"
+    ],
+    "ののちん": [
+     "野乃花",
+     "のの酱"
+    ],
+    "ののたん": [
+     "野乃花",
+     "のの酱"
+    ],
+    "こくおう": [
+     "国王",
+     "野乃花"
+    ]
+   },
+   "name_forms_zh": [
+    "野乃花",
+    "のの酱",
+    "国王"
+   ]
+  },
+  "p_ritsu": {
+   "canonical_zh": [
+    "律"
+   ],
+   "aliases": [
+    "律",
+    "律酱",
+    "师傅"
+   ],
+   "variant_zh": {
+    "りつ": [
+     "律"
+    ],
+    "りっちゃん": [
+     "律酱",
+     "律"
+    ],
+    "りっしー": [
+     "律",
+     "律酱"
+    ],
+    "ししょう": [
+     "师傅"
+    ]
+   },
+   "name_forms_zh": [
+    "律",
+    "律酱",
+    "师傅"
+   ]
+  },
+  "p_miyako": {
+   "canonical_zh": [
+    "都子"
+   ],
+   "aliases": [
+    "都子",
+    "都子酱",
+    "都子老师"
+   ],
+   "variant_zh": {
+    "みやこ": [
+     "都子"
+    ],
+    "みゃーこ": [
+     "都子",
+     "都子酱"
+    ],
+    "みゃこ": [
+     "都子"
+    ],
+    "みゃー": [
+     "都子"
+    ]
+   },
+   "name_forms_zh": [
+    "都子"
+   ]
+  },
+  "p_yuno": {
+   "canonical_zh": [
+    "由乃"
+   ],
+   "aliases": [
+    "由乃",
+    "由乃亲",
+    "由乃酱"
+   ],
+   "variant_zh": {
+    "ゆの": [
+     "由乃"
+    ],
+    "ゆのち": [
+     "由乃亲",
+     "由乃"
+    ],
+    "ゆのっち": [
+     "由乃亲",
+     "由乃"
+    ],
+    "ゆのちゃん": [
+     "由乃酱",
+     "由乃"
+    ]
+   },
+   "name_forms_zh": [
+    "由乃",
+    "由乃亲",
+    "由乃酱"
+   ]
+  },
+  "b_popipa": {
+   "canonical_zh": [
+    "Poppin'Party"
+   ],
+   "aliases": [
+    "Poppin'Party",
+    "Poppin Party",
+    "Popipa",
+    "PoppinParty"
+   ],
+   "variant_zh": {
+    "ぽっぴんぱーてぃ": [
+     "Poppin'Party",
+     "Poppin Party",
+     "PoppinParty"
+    ],
+    "ぽぴぱ": [
+     "Popipa",
+     "Poppin'Party",
+     "Poppin Party"
+    ]
+   },
+   "name_forms_zh": [
+    "Poppin'Party",
+    "Poppin Party",
+    "PoppinParty",
+    "Popipa"
+   ]
+  },
+  "b_afterglow": {
+   "canonical_zh": [
+    "Afterglow"
+   ],
+   "aliases": [
+    "Afterglow"
+   ],
+   "variant_zh": {
+    "あふたーぐろう": [
+     "Afterglow"
+    ]
+   },
+   "name_forms_zh": [
+    "Afterglow"
+   ]
+  },
+  "b_pastel": {
+   "canonical_zh": [
+    "Pastel*Palettes"
+   ],
+   "aliases": [
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "Pasupare",
+    "PastelPalettes",
+    "PasuPare"
+   ],
+   "variant_zh": {
+    "ぱすてるぱれっと": [
+     "Pastel*Palettes",
+     "Pastel Palettes",
+     "PastelPalettes"
+    ],
+    "ぱすぱれ": [
+     "Pasupare",
+     "PasuPare",
+     "Pastel*Palettes",
+     "Pastel Palettes"
+    ]
+   },
+   "name_forms_zh": [
+    "Pastel*Palettes",
+    "Pastel Palettes",
+    "PastelPalettes",
+    "Pasupare",
+    "PasuPare"
+   ]
+  },
+  "b_roselia": {
+   "canonical_zh": [
+    "Roselia"
+   ],
+   "aliases": [
+    "Roselia"
+   ],
+   "variant_zh": {
+    "ろぜりあ": [
+     "Roselia"
+    ]
+   },
+   "name_forms_zh": [
+    "Roselia"
+   ]
+  },
+  "b_harohapi": {
+   "canonical_zh": [
+    "Hello, Happy World!"
+   ],
+   "aliases": [
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "HaroHapi",
+    "Hello,Happy World!",
+    "Haro Hapi"
+   ],
+   "variant_zh": {
+    "はろーはっぴーわーるど": [
+     "Hello, Happy World!",
+     "Hello Happy World",
+     "Hello,Happy World!"
+    ],
+    "はろはぴ": [
+     "HaroHapi",
+     "Haro Hapi",
+     "Hello, Happy World!",
+     "Hello Happy World"
+    ]
+   },
+   "name_forms_zh": [
+    "Hello, Happy World!",
+    "Hello Happy World",
+    "Hello,Happy World!",
+    "HaroHapi",
+    "Haro Hapi"
+   ]
+  },
+  "b_morfonica": {
+   "canonical_zh": [
+    "Morfonica"
+   ],
+   "aliases": [
+    "Morfonica"
+   ],
+   "variant_zh": {
+    "もるふぉにか": [
+     "Morfonica"
+    ]
+   },
+   "name_forms_zh": [
+    "Morfonica"
+   ]
+  },
+  "b_ras": {
+   "canonical_zh": [
+    "RAISE A SUILEN"
+   ],
+   "aliases": [
+    "RAISE A SUILEN",
+    "RAS",
+    "Raise A Suilen"
+   ],
+   "variant_zh": {
+    "れいずあすいれん": [
+     "RAISE A SUILEN",
+     "Raise A Suilen",
+     "RAS"
+    ],
+    "れいず": [
+     "RAISE A SUILEN",
+     "Raise A Suilen",
+     "RAS"
+    ]
+   },
+   "name_forms_zh": [
+    "RAISE A SUILEN",
+    "Raise A Suilen",
+    "RAS"
+   ]
+  },
+  "b_mygo": {
+   "canonical_zh": [
+    "MyGO!!!!!"
+   ],
+   "aliases": [
+    "MyGO!!!!!",
+    "MyGO"
+   ],
+   "variant_zh": {
+    "まいごー": [
+     "MyGO!!!!!",
+     "MyGO"
+    ],
+    "まいご": [
+     "MyGO!!!!!",
+     "MyGO"
+    ]
+   },
+   "name_forms_zh": [
+    "MyGO!!!!!",
+    "MyGO"
+   ]
+  },
+  "b_avemujica": {
+   "canonical_zh": [
+    "Ave Mujica"
+   ],
+   "aliases": [
+    "Ave Mujica",
+    "AveMujica"
+   ],
+   "variant_zh": {
+    "あゔぇむじか": [
+     "Ave Mujica",
+     "AveMujica"
+    ],
+    "あべむじか": [
+     "Ave Mujica",
+     "AveMujica"
+    ],
+    "あむじか": [
+     "Ave Mujica",
+     "AveMujica"
+    ]
+   },
+   "name_forms_zh": [
+    "Ave Mujica",
+    "AveMujica"
+   ]
+  },
+  "b_mewtype": {
+   "canonical_zh": [
+    "梦限大MewType",
+    "梦限大"
+   ],
+   "aliases": [
+    "梦限大",
+    "MewType",
+    "梦限大MewType",
+    "梦限大Mewtype",
+    "Mewtype"
+   ],
+   "variant_zh": {
+    "むげんだいみゅーたいぷ": [
+     "梦限大MewType",
+     "梦限大Mewtype",
+     "梦限大 MewType",
+     "梦限大"
+    ],
+    "みゅーたいぷ": [
+     "MewType",
+     "Mewtype",
+     "梦限大MewType"
+    ],
+    "ゆめみた": [
+     "梦限大",
+     "梦限大MewType",
+     "梦限大Mewtype"
+    ],
+    "むげんだい": [
+     "梦限大",
+     "梦限大MewType",
+     "梦限大Mewtype"
+    ]
+   },
+   "name_forms_zh": [
+    "梦限大",
+    "MewType",
+    "Mewtype"
+   ]
+  },
+  "b_millsage": {
+   "canonical_zh": [
+    "millsage"
+   ],
+   "aliases": [
+    "millsage",
+    "Millsage"
+   ],
+   "variant_zh": {
+    "みるせーじ": [
+     "millsage",
+     "Millsage"
+    ]
+   },
+   "name_forms_zh": [
+    "millsage",
+    "Millsage"
+   ]
+  },
+  "b_ikka": {
+   "canonical_zh": [
+    "一家Dumb Rock!"
+   ],
+   "aliases": [
+    "一家Dumb Rock!",
+    "一家DumbRock",
+    "Ikka Dumb Rock!"
+   ],
+   "variant_zh": {
+    "いっかだむろっく": [
+     "一家Dumb Rock!",
+     "一家DumbRock",
+     "Ikka Dumb Rock!"
+    ],
+    "だむろっく": [
+     "一家Dumb Rock!",
+     "一家DumbRock",
+     "Ikka Dumb Rock!"
+    ]
+   },
+   "name_forms_zh": [
+    "一家Dumb Rock!",
+    "一家DumbRock",
+    "Ikka Dumb Rock!"
+   ]
+  }
+ }
+}

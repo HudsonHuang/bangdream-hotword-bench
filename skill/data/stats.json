@@ -1,0 +1,10 @@
+{
+ "schema": "bangdream-hotword-bench/test-base/v0.1",
+ "n": 283,
+ "pos": 141,
+ "neg": 142,
+ "audio_seconds": 1953.0,
+ "chunk_seconds": 2235.1,
+ "n_videos": 215,
+ "chunk_audio_file": "audio_1h/test-base_01_of_01.m4a"
+}

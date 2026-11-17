@@ -1,0 +1,1215 @@
+{
+ "schema": "bangdream-hotword-bench/results/v0.1",
+ "split": "test-base",
+ "n_samples": 283,
+ "asr": {
+  "asr2": {
+   "schema": "bangdream-hotword-bench/asr-eval/v1",
+   "run": "testbasev01_asr2_context",
+   "backend": "volc",
+   "model": "volc.bigasr.auc",
+   "hotword_mode": "context",
+   "split": "test",
+   "samples_file": "data/bangdream_hotword_bench/testbase_v01/samples_asr.jsonl",
+   "n_samples": 283,
+   "elapsed_s": 273.6,
+   "per_group": {
+    "b_afterglow": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 8
+    },
+    "b_avemujica": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 6,
+     "pos_strict_ok": 5
+    },
+    "b_harohapi": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_strict_ok": 8
+    },
+    "b_mewtype": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_strict_ok": 8
+    },
+    "b_morfonica": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_strict_ok": 7
+    },
+    "b_mygo": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 7,
+     "pos_ok": 5,
+     "pos_strict_ok": 5
+    },
+    "b_pastel": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_strict_ok": 7
+    },
+    "b_popipa": {
+     "neg_n": 2,
+     "neg_ok": 2,
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_strict_ok": 7
+    },
+    "b_ras": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 4,
+     "pos_ok": 4,
+     "pos_strict_ok": 4
+    },
+    "b_roselia": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 9
+    },
+    "p_arale": {
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_over_trigger": 1,
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_strict_ok": 8
+    },
+    "p_miyako": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 6,
+     "pos_strict_ok": 6
+    },
+    "p_nonoka": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 7
+    },
+    "p_ritsu": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_strict_ok": 7
+    },
+    "p_yuno": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 9
+    }
+   },
+   "overall": {
+    "pos_hit_lenient": "121/141",
+    "pos_hit_lenient_rate": 0.8582,
+    "pos_hit_strict": "105/141",
+    "pos_hit_strict_rate": 0.7447,
+    "neg_ok": "141/142",
+    "neg_ok_rate": 0.993
+   }
+  },
+  "qwen31": {
+   "schema": "bangdream-hotword-bench/asr-eval/v1",
+   "run": "testbasev01_qwen3.1_context",
+   "backend": "qwen",
+   "model": "qwen-audio-3.1-asr-flash",
+   "hotword_mode": "context",
+   "split": "test",
+   "samples_file": "data/bangdream_hotword_bench/testbase_v01/samples_asr.jsonl",
+   "n_samples": 283,
+   "elapsed_s": 76.5,
+   "per_group": {
+    "b_afterglow": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 8
+    },
+    "b_avemujica": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_strict_ok": 7
+    },
+    "b_harohapi": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_strict_ok": 9
+    },
+    "b_mewtype": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 9
+    },
+    "b_morfonica": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 7
+    },
+    "b_mygo": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 7,
+     "pos_ok": 6,
+     "pos_strict_ok": 6
+    },
+    "b_pastel": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 8
+    },
+    "b_popipa": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 7,
+     "neg_n": 2,
+     "neg_ok": 2
+    },
+    "b_ras": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 4,
+     "pos_ok": 3,
+     "pos_strict_ok": 3
+    },
+    "b_roselia": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 9
+    },
+    "p_arale": {
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_over_trigger": 1,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 9
+    },
+    "p_miyako": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_strict_ok": 8
+    },
+    "p_nonoka": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_strict_ok": 7
+    },
+    "p_ritsu": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_strict_ok": 8
+    },
+    "p_yuno": {
+     "neg_n": 10,
+     "neg_ok": 10,
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_strict_ok": 10
+    }
+   },
+   "overall": {
+    "pos_hit_lenient": "125/141",
+    "pos_hit_lenient_rate": 0.8865,
+    "pos_hit_strict": "115/141",
+    "pos_hit_strict_rate": 0.8156,
+    "neg_ok": "141/142",
+    "neg_ok_rate": 0.993
+   }
+  }
+ },
+ "zh": {
+  "asr2": {
+   "overall": {
+    "pos_n": 141,
+    "pos_ok": 126,
+    "pos_rate": 0.8936,
+    "pos_strict": 126,
+    "pos_strict_rate": 0.8936,
+    "neg_n": 142,
+    "neg_ok": 130,
+    "neg_rate": 0.9155,
+    "neg_over": 12,
+    "empty": 1,
+    "empty_rate": 0.0035
+   },
+   "per_group": {
+    "b_afterglow": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_avemujica": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_harohapi": {
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_rate": 0.8,
+     "pos_strict": 8,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_mewtype": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_morfonica": {
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_rate": 0.8,
+     "pos_strict": 8,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_mygo": {
+     "pos_n": 7,
+     "pos_ok": 6,
+     "pos_rate": 0.8571,
+     "pos_strict": 6,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_pastel": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_popipa": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 2,
+     "neg_ok": 2,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_ras": {
+     "pos_n": 4,
+     "pos_ok": 0,
+     "pos_rate": 0.0,
+     "pos_strict": 0,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_roselia": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "p_arale": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_rate": 0.9,
+     "neg_over": 1
+    },
+    "p_miyako": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 10,
+     "neg_ok": 4,
+     "neg_rate": 0.4,
+     "neg_over": 6
+    },
+    "p_nonoka": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 7,
+     "neg_rate": 0.7,
+     "neg_over": 3
+    },
+    "p_ritsu": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_rate": 0.9,
+     "neg_over": 1
+    },
+    "p_yuno": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_rate": 0.9,
+     "neg_over": 1
+    }
+   },
+   "suspects": [
+    {
+     "sample_id": "b_avemujica_pos_ew-HkuFPUcg_1953",
+     "group": "b_avemujica",
+     "label": "pos",
+     "variant": "アムジカ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": true,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_harohapi_pos_IjWrXO3Z2Fo_4919",
+     "group": "b_harohapi",
+     "label": "pos",
+     "variant": "ハロー",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_harohapi_pos_MNocXlK5P8s_365",
+     "group": "b_harohapi",
+     "label": "pos",
+     "variant": "ハッピー",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_morfonica_pos_5G89iEg9As0_5695",
+     "group": "b_morfonica",
+     "label": "pos",
+     "variant": "モルフォ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_morfonica_pos_3x5C09C5660_2505",
+     "group": "b_morfonica",
+     "label": "pos",
+     "variant": "モルフォ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_mygo_pos_BTxwrN_GK4Q_5838",
+     "group": "b_mygo",
+     "label": "pos",
+     "variant": "マイゴー",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_pastel_pos_H9F7uoXUn3E_3956",
+     "group": "b_pastel",
+     "label": "pos",
+     "variant": "パレット",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_popipa_pos_r3-RVxgfasA_3184",
+     "group": "b_popipa",
+     "label": "pos",
+     "variant": "ポピパ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_ras_pos_SAJRGEedrQI_955",
+     "group": "b_ras",
+     "label": "pos",
+     "variant": "レイズ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_ras_pos_rKT5w_t4dx8_11185",
+     "group": "b_ras",
+     "label": "pos",
+     "variant": "レイズ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_ras_pos_ZMQWfmGnx9Q_3188",
+     "group": "b_ras",
+     "label": "pos",
+     "variant": "レイズ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_ras_pos_wwD6tJmta1I_338",
+     "group": "b_ras",
+     "label": "pos",
+     "variant": "レイズ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_roselia_pos_d85gCPKErKo_8239",
+     "group": "b_roselia",
+     "label": "pos",
+     "variant": "ロゼリア",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "p_arale_neg_-ZLVik9Xgek_8875",
+     "group": "p_arale",
+     "label": "neg",
+     "variant": "あらし",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "阿拉蕾"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_neg_cS88fd3psr8_2939",
+     "group": "p_miyako",
+     "label": "neg",
+     "variant": "みやこ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "都子"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_neg_SILSruTqrtY_2150",
+     "group": "p_miyako",
+     "label": "neg",
+     "variant": "みやこ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "都子"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_neg_AsoDRMeRHLM_5489",
+     "group": "p_miyako",
+     "label": "neg",
+     "variant": "みやこ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "都子"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_neg_WmVWeNF6i3Y_293",
+     "group": "p_miyako",
+     "label": "neg",
+     "variant": "みやこ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "都子"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_neg_C_aATBY-QcA_4272",
+     "group": "p_miyako",
+     "label": "neg",
+     "variant": "みやこ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "都子"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_neg_jL0FJ2WhOUI_6514",
+     "group": "p_miyako",
+     "label": "neg",
+     "variant": "みやこ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "都子"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_pos_2nf1sFpZCYs_2247",
+     "group": "p_miyako",
+     "label": "pos",
+     "variant": "みやこ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "p_nonoka_neg_SG-v5sSU1gc_18737",
+     "group": "p_nonoka",
+     "label": "neg",
+     "variant": "ののか",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "野乃花"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_nonoka_neg_HKwmWvFo4Us_958",
+     "group": "p_nonoka",
+     "label": "neg",
+     "variant": "のうか",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "野乃花"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_nonoka_neg_8XIK7rNdBOw_2160",
+     "group": "p_nonoka",
+     "label": "neg",
+     "variant": "ののか",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "野乃花"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_ritsu_neg_-daJHsE0FTo_602",
+     "group": "p_ritsu",
+     "label": "neg",
+     "variant": "りつ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "律"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_yuno_neg_3-glNRJ5QRU_4078",
+     "group": "p_yuno",
+     "label": "neg",
+     "variant": "ゆの",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "由乃",
+       "由乃亲"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_yuno_pos_3CK3aM3YwQo_1303",
+     "group": "p_yuno",
+     "label": "pos",
+     "variant": "ゆの",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    }
+   ]
+  },
+  "qwen": {
+   "overall": {
+    "pos_n": 141,
+    "pos_ok": 133,
+    "pos_rate": 0.9433,
+    "pos_strict": 133,
+    "pos_strict_rate": 0.9433,
+    "neg_n": 142,
+    "neg_ok": 137,
+    "neg_rate": 0.9648,
+    "neg_over": 5,
+    "empty": 0,
+    "empty_rate": 0.0
+   },
+   "per_group": {
+    "b_afterglow": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_avemujica": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_harohapi": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_mewtype": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_morfonica": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_mygo": {
+     "pos_n": 7,
+     "pos_ok": 7,
+     "pos_rate": 1.0,
+     "pos_strict": 7,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_pastel": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_popipa": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 2,
+     "neg_ok": 2,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_ras": {
+     "pos_n": 4,
+     "pos_ok": 1,
+     "pos_rate": 0.25,
+     "pos_strict": 1,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "b_roselia": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "p_arale": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_rate": 0.9,
+     "neg_over": 1
+    },
+    "p_miyako": {
+     "pos_n": 10,
+     "pos_ok": 9,
+     "pos_rate": 0.9,
+     "pos_strict": 9,
+     "neg_n": 10,
+     "neg_ok": 10,
+     "neg_rate": 1.0,
+     "neg_over": 0
+    },
+    "p_nonoka": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_rate": 0.9,
+     "neg_over": 1
+    },
+    "p_ritsu": {
+     "pos_n": 10,
+     "pos_ok": 8,
+     "pos_rate": 0.8,
+     "pos_strict": 8,
+     "neg_n": 10,
+     "neg_ok": 9,
+     "neg_rate": 0.9,
+     "neg_over": 1
+    },
+    "p_yuno": {
+     "pos_n": 10,
+     "pos_ok": 10,
+     "pos_rate": 1.0,
+     "pos_strict": 10,
+     "neg_n": 10,
+     "neg_ok": 8,
+     "neg_rate": 0.8,
+     "neg_over": 2
+    }
+   },
+   "suspects": [
+    {
+     "sample_id": "b_popipa_pos_r3-RVxgfasA_3184",
+     "group": "b_popipa",
+     "label": "pos",
+     "variant": "ポピパ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_ras_pos_SAJRGEedrQI_955",
+     "group": "b_ras",
+     "label": "pos",
+     "variant": "レイズ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_ras_pos_rKT5w_t4dx8_11185",
+     "group": "b_ras",
+     "label": "pos",
+     "variant": "レイズ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_ras_pos_ZMQWfmGnx9Q_3188",
+     "group": "b_ras",
+     "label": "pos",
+     "variant": "レイズ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "b_roselia_pos_d85gCPKErKo_8239",
+     "group": "b_roselia",
+     "label": "pos",
+     "variant": "ロゼリア",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "p_arale_neg_-ZLVik9Xgek_8875",
+     "group": "p_arale",
+     "label": "neg",
+     "variant": "あらし",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "阿拉蕾"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_miyako_pos_2nf1sFpZCYs_2247",
+     "group": "p_miyako",
+     "label": "pos",
+     "variant": "みやこ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "p_nonoka_neg_8XIK7rNdBOw_2160",
+     "group": "p_nonoka",
+     "label": "neg",
+     "variant": "ののか",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "野乃花"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_ritsu_neg_-daJHsE0FTo_602",
+     "group": "p_ritsu",
+     "label": "neg",
+     "variant": "りつ",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "律"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_ritsu_pos_6ldHm3pSaFQ_225",
+     "group": "p_ritsu",
+     "label": "pos",
+     "variant": "りつ",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "p_ritsu_pos_0Oom7elwKMo_4836",
+     "group": "p_ritsu",
+     "label": "pos",
+     "variant": "りっちゃん",
+     "suspect": "pos_missed",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "match": ""
+     }
+    },
+    {
+     "sample_id": "p_yuno_neg_3-glNRJ5QRU_4078",
+     "group": "p_yuno",
+     "label": "neg",
+     "variant": "ゆの",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "由乃",
+       "由乃亲"
+      ]
+     }
+    },
+    {
+     "sample_id": "p_yuno_neg_0U2MUhTBOoE_2376",
+     "group": "p_yuno",
+     "label": "neg",
+     "variant": "ゆの",
+     "suspect": "neg_has_name",
+     "score": {
+      "ok": false,
+      "strict": false,
+      "lenient": false,
+      "empty": false,
+      "over_trigger": true,
+      "matched_forms": [
+       "由乃",
+       "由乃亲"
+      ]
+     }
+    }
+   ]
+  }
+ }
+}
