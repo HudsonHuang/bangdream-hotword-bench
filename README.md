@@ -16,6 +16,7 @@
 - 📖 **热词**：`ymmt_hotwords_v0.1`（读音基元 + 组合规则 + 中文译名 + 英文名），含中英文标准热词与各 ASR 后端导出
 - 🎧 **测试集**：单套 test-base，283 条句级音频（141 pos / 142 neg），15 组，来自 215 个公开 YouTube 直播
 - 🎬 **长音频**：283 条按句拼接（句间 1 秒静音）成 37.3 分钟分片音频 + 每条句子的时长轴；逐句标注视频为本地派生文件，不随数据集发布
+- 🧵 **连续片段 v0.2**：dense-20，20 分钟不切片的直播（181 句 / 85 处专名提及），测真跑起来的连续流召回
 - 🧪 **评测**：模型无关的评测 skill，两种模式（ASR / 同传）
 - 📊 **结果**：ASR2 与 qwen 两个 ASR 前端在两种模式下的指标见下文
 
@@ -77,6 +78,7 @@ test-base（音频 + 视频 + 标注 + 来源信息）
 | 长音频 | 37.3 分钟（句间 1s 静音） |
 | 长音频分片 | 37.3 分钟，1 个 1 小时分片（`audio_1h/`） |
 | 源视频 | 215 个公开 YouTube 直播 |
+| **dense-20（v0.2）** | 20 分钟连续音频，181 句，85 处专名提及，13 组；见 `skill/docs/DENSE20.md` |
 
 ```json
 {
@@ -105,6 +107,21 @@ test-base（音频 + 视频 + 标注 + 来源信息）
 - 本地生成的逐句标注视频（37.3 分钟）帧上显示每条句子的 `UTT ID`、`是否包含热词`、`名字组`，
   以及热词/同音词出现的起止时间（`热词出现: 00:12–00:15`，分:秒）；1 秒静音段显示 `silence: 1s`。
   视频会随版本迭代频繁变化，因此不随数据集发布；音频切片与长音频即评测所需全部音频。
+
+## v0.2 · dense-20 连续片段
+
+v0.1 的 283 条是句级切片，每条一个判定；v0.2 补一段 **20 分钟连续直播**（`ew-HkuFPUcg` 第 7200–8400 秒），
+不切片、保留时间轴，用来测真实运行时的召回与断句差异：
+
+| 文件 | 说明 |
+|---|---|
+| `audio/dense-20/dense20_01_of_01.m4a`（HF） | 20 分钟连续音频 |
+| `data/dense20.jsonl` | 85 条可评分样本（句 × 组） |
+| `data/dense20_units.json` | 181 个参考句（含 124 个无专名句，用于虚警判定） |
+| `data/dense20_transcript.jsonl` | 语义校正后的日/中参考转写 |
+
+评分：`skill/scripts/score_mentions.py`（mention-level，按句 × 组）；与 v0.1 合并的参考结果见
+[results/dense20_results.md](results/dense20_results.md)，跑法见 [skill/docs/LIVE_INTERP.md](skill/docs/LIVE_INTERP.md)。
 
 ## 怎么用
 
@@ -152,8 +169,8 @@ python scripts/eval.py --task zh  --submission my_zh.jsonl    # 同传模式
 ```text
 .
 ├── skill/                  # 模型无关的评测 skill（eval / 校验 / 扩名字 / 翻译批处理）
-│   ├── scripts/            # eval.py · validate_submission.py · add_names.py · mt_batches.py …
-│   ├── data/               # test_base.jsonl（283 条标注）
+│   ├── scripts/            # eval.py · score_mentions.py · run_parallel.py · validate_submission.py …
+│   ├── data/               # test_base.jsonl（283 条）+ dense20*.json（v0.2 连续片段）
 │   ├── hotwords/           # 热词与各后端导出
 │   └── docs/               # 打分规则 / 提交 / 扩展新名字 / 翻译链路
 ├── hotwords/               # 热词库（可直接下载）

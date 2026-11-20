@@ -18,6 +18,18 @@
 
 每组目标 10 pos + 10 neg；可用量不足的组按实际（b_mygo pos 7、b_popipa neg 2、b_ras pos 4）。
 
+## v0.2 增量：dense-20
+
+| 项 | 值 |
+|---|---|
+| 音频 | 20 分钟连续直播（`ew-HkuFPUcg` 第 7200–8400 秒） |
+| 参考句 | 181（57 句含专名 / 124 句无专名） |
+| 专名提及 | 85 处，13 组 |
+| 评分 | mention-level（`scripts/score_mentions.py`），虚警由无专名句判定 |
+
+参考转写由 qwen-audio-3.1 转写打底，对照自动字幕、Paraformer 转写与三套译文逐句语义校正；
+低置信度句子在 `data/dense20.jsonl` 的 `confidence` 字段标注。
+
 ## 构造方式
 
 1. 语料：梦限大/BanG Dream! 相关 YouTube 直播的日语自动字幕（约 1785 视频 / 3221 小时）；

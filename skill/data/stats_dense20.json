@@ -1,0 +1,48 @@
+{
+ "split": "dense-20",
+ "audio_seconds": 1200.0,
+ "units": 181,
+ "pos_units": 57,
+ "neg_units": 124,
+ "mentions": 85,
+ "groups": [
+  "b_afterglow",
+  "b_avemujica",
+  "b_harohapi",
+  "b_mewtype",
+  "b_mygo",
+  "b_pastel",
+  "b_popipa",
+  "b_roselia",
+  "p_arale",
+  "p_miyako",
+  "p_nonoka",
+  "p_ritsu",
+  "p_yuno"
+ ],
+ "per_group": {
+  "b_afterglow": 4,
+  "b_avemujica": 9,
+  "b_harohapi": 3,
+  "b_mewtype": 9,
+  "b_mygo": 3,
+  "b_pastel": 5,
+  "b_popipa": 3,
+  "b_roselia": 9,
+  "p_arale": 3,
+  "p_miyako": 2,
+  "p_nonoka": 1,
+  "p_ritsu": 18,
+  "p_yuno": 16
+ },
+ "source_video": {
+  "id": "ew-HkuFPUcg",
+  "title": null,
+  "channel": null,
+  "upload_date": null
+ },
+ "window_s": [
+  7200,
+  8400
+ ]
+}

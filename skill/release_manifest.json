@@ -1,25 +1,90 @@
 {
  "schema": "bangdream-hotword-bench/release/v1",
- "skill_version": "ymmt-hotwords-v0.1",
- "split": "test-base（单套测试集）",
+ "skill_version": "ymmt-hotwords-v0.2",
+ "split": "test-base + dense-20",
  "counts": {
   "test_base": {
    "samples": 283,
    "pos": 141,
    "neg": 142
+  },
+  "dense_20": {
+   "units": 181,
+   "mentions": 85,
+   "audio_seconds": 1200
   }
  },
  "note": "音频与源视频清单在 Hugging Face 数据集；skill 内只含标注/热词/脚本。",
  "files": [
+  {
+   "file": ".gitignore",
+   "bytes": 28,
+   "sha256": "6525fc512c0b3a603b1b8f31c2369f333beb111e6bd9fcf540860ec9f5e22b37"
+  },
+  {
+   "file": "data/dense20.jsonl",
+   "bytes": 90219,
+   "sha256": "3d70a42f454f42b9a3bdd167a383457e52615fa9f71755ede436cb65edf1d9e5"
+  },
+  {
+   "file": "data/dense20_transcript.jsonl",
+   "bytes": 42676,
+   "sha256": "e898f1784e76c50269e58f62e83a0c38238134b2cb275c845946c0ac81df0077"
+  },
+  {
+   "file": "data/dense20_units.json",
+   "bytes": 47648,
+   "sha256": "fa85688ba8c94824419ac9f0258519fe21fa7feee92e3671c6c8a42bdf94d122"
+  },
   {
    "file": "data/stats.json",
    "bytes": 218,
    "sha256": "bb50f8d5452afdfbd5d1ce5f7b96f979053697af39799192b87d28fee8f4b5d2"
   },
   {
+   "file": "data/stats_dense20.json",
+   "bytes": 752,
+   "sha256": "42d563036ee8e16ab7d34d45a9b61ca8acfba83844544534979cad2b16128255"
+  },
+  {
    "file": "data/test_base.jsonl",
    "bytes": 237291,
    "sha256": "adce4572517f807df56cd462d7fc5b68a36055dd0223e24835a63bc687a2e642"
+  },
+  {
+   "file": "DATASET_CARD.md",
+   "bytes": 2887,
+   "sha256": "4f297c578b6a78375bba17fc2dc39ad5e0d0a52b96fd7ad038a0985b0eb57695"
+  },
+  {
+   "file": "docs/DENSE20.md",
+   "bytes": 2656,
+   "sha256": "c44c20ffd35d9de74668fbbbca939e5eda00e2882e83e4e982decc92396443e9"
+  },
+  {
+   "file": "docs/EXTENDING.md",
+   "bytes": 3436,
+   "sha256": "78b6d1de0f84fbd9a1379a9fa79a49671bf94155702447437840350fea88508b"
+  },
+  {
+   "file": "docs/LIVE_INTERP.md",
+   "bytes": 2692,
+   "sha256": "57aae4cc1102242a0c24fe972a16010436cd87cf37e92ed1bea2767963bc327a"
+  },
+  {
+   "file": "docs/MT_PIPELINE.md",
+   "bytes": 2466,
+   "sha256": "bab260e0b0761191477057b4ca5fc7342fdc4385e55da3661e3723608af0dcb2"
+  },
+  {
+   "file": "docs/SCORING.md",
+   "bytes": 2474,
+   "sha256": "45cd7d9204ef15b4190dea0168ba21ffae4075b82186c18c63668d268888ce43"
+  },
+  {
+   "file": "docs/SUBMISSION.md",
+   "bytes": 1752,
+   "sha256": "041e14390593c16e897695fa8ce0cd7c3cd827484ddddbfea8450fbc7df6bfd7"
   },
   {
    "file": "hotwords/export/moss_hotwords.csv",
@@ -77,6 +142,16 @@
    "sha256": "4d009a187f668e9edbb9005c4b7c6cd5e59b74455f41e43310c9362f4e49f37b"
   },
   {
+   "file": "README.md",
+   "bytes": 2697,
+   "sha256": "bc2b244e50a9414c1feaae40bca0209686ad3b04759376b6bf48cffc6244c9e3"
+  },
+  {
+   "file": "requirements.txt",
+   "bytes": 207,
+   "sha256": "05222ffa0b302bdc526198580d7f938412284dd51b13fb1b936a3ba9eeeed26d"
+  },
+  {
    "file": "scripts/add_names.py",
    "bytes": 11039,
    "sha256": "abd4e25f0aa03ad0fb048f8b4d4d82fd20b1a0c28048a5f4040c480793ef8444"
@@ -107,9 +182,29 @@
    "sha256": "3fdae685c648a07b6d194d9e9d3d7c36ef35c4a56841952d0059443c13431812"
   },
   {
+   "file": "scripts/run_parallel.py",
+   "bytes": 6732,
+   "sha256": "c9515832389beaf680bdafeba5a370b50be783fc8577aac8290f9ca7818f0d5d"
+  },
+  {
+   "file": "scripts/score_mentions.py",
+   "bytes": 7653,
+   "sha256": "22c502a025973915077fb920b202e88f9f1b28e4b635233eb71c1568dcdb11a8"
+  },
+  {
    "file": "scripts/validate_submission.py",
    "bytes": 2835,
    "sha256": "b9a5baa5f746e35d4f83a4d66a1bb77e819497982abdfcd9aa763d8cd758d9e5"
+  },
+  {
+   "file": "SKILL.md",
+   "bytes": 5271,
+   "sha256": "2ed867751965f8a95b7afa4a351c9d74f3a49cd47abdca9851c77d55cd345b90"
+  },
+  {
+   "file": "tests/selftest.py",
+   "bytes": 2693,
+   "sha256": "be170014f1c5642af872c624a821c8134e2e46eedce463df4e3651d589650d42"
   }
  ]
 }
