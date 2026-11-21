@@ -1,4 +1,4 @@
-# 数据卡 · bangdream-hotword-bench v0.1
+# 数据卡 · bangdream-hotword-bench v0.3
 
 ## 是什么
 
@@ -29,6 +29,18 @@
 
 参考转写由 qwen-audio-3.1 转写打底，对照自动字幕、Paraformer 转写与三套译文逐句语义校正；
 低置信度句子在 `data/dense20.jsonl` 的 `confidence` 字段标注。
+
+## v0.3 增量：gold-v0.3 流式黄金集
+
+| 项 | 值 |
+|---|---|
+| 片段 | 32 条已发布高光 |
+| 音频 | 92.4 分钟，16 kHz mono WAV |
+| 参考字幕 | 1,525 条人工修正中文 cue（带说话人标签） |
+| 精标统计 | 600+ 条 cue 被人工改过（细分 / 说话人 / 译文） |
+| 用途 | 同时评回显节奏、翻译质量、人名/乐队名热词 |
+
+评分脚本 `scripts/eval_stream.py`；口径与参考结果见 `docs/GOLD03.md`、`results/gold03_results.md`。
 
 ## 构造方式
 

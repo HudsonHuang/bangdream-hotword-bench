@@ -1,6 +1,6 @@
 ---
 name: bangdream-hotword-bench
-description: 邦多利烤肉场景（BanG Dream! / 梦限大 MewType）的人名热词库与 ASR/同传测试集：ymmt_hotwords_v0.1 最小完备读音热词、中文/英文标准热词、283 条句级音频 + 20 分钟连续片段（dense-20）、两种测试模式（ASR / 同传）与并行 headless 评测脚本。支持扩展新名字。
+description: 邦多利烤肉场景（BanG Dream! / 梦限大 MewType）的人名热词库与 ASR/同传测试集：ymmt_hotwords_v0.1 最小完备读音热词、中文/英文标准热词、283 条句级音频 + 20 分钟连续片段（dense-20）+ 32 条人工精标流式黄金集（gold-v0.3，92.4 分钟）、三种测试口径（ASR / 同传 / 流式节奏+质量+热词）与并行 headless 评测脚本。支持扩展新名字。
 ---
 
 # bangdream-hotword-bench
@@ -11,7 +11,8 @@ description: 邦多利烤肉场景（BanG Dream! / 梦限大 MewType）的人名
   含中文规范译名、英文名、各 ASR 后端现成导出；
 - **测试集**：test-base，283 条句级音频（141 pos / 142 neg），15 组，来自 215 个公开 YouTube 直播；
 - **连续片段**：dense-20（v0.2），20 分钟不切片音频，181 句 / 85 处专名提及，用于连续流召回；
-- **两种测试模式**：ASR（音频 → 日文转写）与 同传（音频 → 最终中文）；
+- **流式黄金集**：gold-v0.3，32 条完整高光，92.4 分钟，16 kHz WAV + 人工精标中文 SRT（1,525 cue）；
+- **三种测试口径**：ASR（音频 → 日文转写）、同传（音频 → 最终中文）、流式（节奏 + 质量 + 热词）；
 - 数据（音频 / 视频 / 标注）在 Hugging Face：https://huggingface.co/datasets/zhongyihuang/bangdream-hotword-bench
 
 ## 目录
@@ -26,6 +27,7 @@ skill/
 │   ├── SUBMISSION.md     # 提交格式与验证流程
 │   ├── MT_PIPELINE.md    # 同传/翻译评测跑法
 │   ├── DENSE20.md        # v0.2 连续片段说明与打分
+│   ├── GOLD03.md         # v0.3 流式黄金集：节奏 / 质量 / 热词
 │   ├── LIVE_INTERP.md    # 用 live-interp 跑本测试集
 │   └── EXTENDING.md      # 扩展新名字
 ├── hotwords/             # 热词定义 + 读音索引 + 中文/英文标准热词 + 后端导出
@@ -33,9 +35,11 @@ skill/
 │   ├── test_base.jsonl   # 283 条标注（含 utt 在视频中的起止）
 │   ├── dense20.jsonl     # v0.2：85 条连续片段样本（句 × 组）
 │   ├── dense20_units.json / dense20_transcript.jsonl
+│   ├── gold_v03.jsonl    # v0.3：32 条高光清单
 │   └── stats.json / stats_dense20.json
 ├── scripts/
 │   ├── eval.py                 # 评测入口（--task asr | zh）
+│   ├── eval_stream.py          # v0.3：节奏 / 字符 F1 / 人名召回
 │   ├── validate_submission.py  # 提交文件校验
 │   ├── add_names.py            # 扩展新名字（重建热词/索引/导出）
 │   ├── score_mentions.py       # v0.2：连续片段 mention-level 打分
@@ -95,6 +99,23 @@ python scripts/score_mentions.py --merged runs/dense20/icl/merged.jsonl --task z
 - 参考句 181 个（57 句含专名、124 句无专名）；虚警由无专名句判定，召回由 85 处提及判定；
 - 与 v0.1 合并的参考结果：`results/dense20_results.md`；
 - 详细说明：`docs/DENSE20.md`，live-interp 跑法：`docs/LIVE_INTERP.md`。
+
+## v0.3 流式黄金集（gold-v0.3）
+
+32 条完整高光，16 kHz WAV + 人工精标中文 SRT（1,525 cue），同时评三件事：
+
+```bash
+# 1. 跑模型，产出带 _recv_mono 的 events.jsonl（见 live-interp 的 tools/replay_stream.py）
+# 2. 打分
+python scripts/eval_stream.py \
+  --run runs/31_ref/events.jsonl \
+  --srt gold-v0.3/srt/9u5-VQG61So_hl04_11天热量结算：1律≈4由乃.srt \
+  --offset 120 --start 120 --end 300 \
+  --label "3.1 reference" --out runs/31_ref/report
+```
+
+产物：`metrics.json`（coverage / first-zh / charF1 / 人名召回 / 中文间隔）与 `report.md`。
+数据清单：`data/gold_v03.jsonl`；口径与参考结果：`docs/GOLD03.md`、`results/gold03_results.md`。
 
 ## 提交官方验证
 

@@ -48,7 +48,38 @@ python scripts/score_mentions.py --merged runs/dense20/para/merged.jsonl --task 
 
 统一关闭上下文（`--context-turns 0`），结果见 `results/dense20_results.md`。
 
-## 4. 注意
+## 4. v0.3 黄金集（节奏 + 质量 + 热词）
+
+整条高光一次喂完，保留 `_recv_mono`，再用 `eval_stream.py` 同时算三件事：
+
+```bash
+# 先 clone live-interpreter，用它的实时回放入口
+python /path/to/live-interpreter/tools/replay_stream.py \
+  --wav gold-v0.3/audio/9u5-VQG61So_hl04_11天热量结算：1律≈4由乃.wav \
+  --start 120 --seconds 180 --out runs/31_ref -- \
+  --model qwen-audio-3.1-asr-flash-streaming --max-end-silence 200 \
+  --vad-model near_meeting_16k --mt-model qwen3.8-max --mt-mode reference \
+  --hotwords hotwords/yumemita_bangdream.txt
+
+python scripts/eval_stream.py --run runs/31_ref/events.jsonl \
+  --srt gold-v0.3/srt/9u5-VQG61So_hl04_11天热量结算：1律≈4由乃.srt \
+  --offset 120 --start 120 --end 300 --label "3.1 reference" --out runs/31_ref/report
+```
+
+> 回放入口见 live-interpreter 的 `docs/BENCHMARK_V03.md`；如果只评自己的模型，按
+> `docs/GOLD03.md` 的 JSONL 格式产出即可。
+
+2–5 分钟参考结果：
+
+| 配置 | coverage | first-zh p50 | mean | charF1 | 人名召回 | 成本 |
+|---|---:|---:|---:|---:|---:|---:|
+| Paraformer + qwen3.8-max | 95.7% | 1.77 s | 1.39 s | 0.430 | 76.9% | 2.71 元/h |
+| 3.1 + reference | 91.5% | 1.34 s | 0.72 s | 0.445 | 92.3% | 2.74 元/h |
+| 3.1 + ICL + 1 轮上下文 | 91.5% | 1.42 s | 0.76 s | 0.456 | 84.6% | 3.68 元/h |
+
+详细口径：`docs/GOLD03.md`；完整结果：`results/gold03_results.md`。
+
+## 5. 注意
 
 - 3.1 的 `input.context`（会话级背景词表）实测会让 ASR 召回下降，不建议使用。
 - 逐句翻译的延迟由「静音判句 + 一次 LLM 调用」组成；统一温度 0.2、`enable_thinking=false`。

@@ -1,7 +1,7 @@
 {
  "schema": "bangdream-hotword-bench/release/v1",
- "skill_version": "ymmt-hotwords-v0.2",
- "split": "test-base + dense-20",
+ "skill_version": "ymmt-hotwords-v0.3",
+ "split": "test-base + dense-20 + gold-v0.3",
  "counts": {
   "test_base": {
    "samples": 283,
@@ -12,6 +12,11 @@
    "units": 181,
    "mentions": 85,
    "audio_seconds": 1200
+  },
+  "gold_v03": {
+   "clips": 32,
+   "cues": 1525,
+   "audio_seconds": 5544.6
   }
  },
  "note": "音频与源视频清单在 Hugging Face 数据集；skill 内只含标注/热词/脚本。",
@@ -37,6 +42,11 @@
    "sha256": "fa85688ba8c94824419ac9f0258519fe21fa7feee92e3671c6c8a42bdf94d122"
   },
   {
+   "file": "data/gold_v03.jsonl",
+   "bytes": 16141,
+   "sha256": "9bb8963649f14946e845666e635465e0704f8283378e1ba1802a2d0cf12eb8f5"
+  },
+  {
    "file": "data/stats.json",
    "bytes": 218,
    "sha256": "bb50f8d5452afdfbd5d1ce5f7b96f979053697af39799192b87d28fee8f4b5d2"
@@ -53,8 +63,8 @@
   },
   {
    "file": "DATASET_CARD.md",
-   "bytes": 2887,
-   "sha256": "4f297c578b6a78375bba17fc2dc39ad5e0d0a52b96fd7ad038a0985b0eb57695"
+   "bytes": 3393,
+   "sha256": "f69b4d3a2bc6fe03448cae56a8d00e5c641569898d6a7ac177556e4ba1c8e8e4"
   },
   {
    "file": "docs/DENSE20.md",
@@ -65,6 +75,11 @@
    "file": "docs/EXTENDING.md",
    "bytes": 3436,
    "sha256": "78b6d1de0f84fbd9a1379a9fa79a49671bf94155702447437840350fea88508b"
+  },
+  {
+   "file": "docs/GOLD03.md",
+   "bytes": 5400,
+   "sha256": "3ff8958bc82026a370bf58ba2981f5755dfd8516c417e759a5a283d62fcb26c8"
   },
   {
    "file": "docs/LIVE_INTERP.md",
@@ -143,8 +158,8 @@
   },
   {
    "file": "README.md",
-   "bytes": 2697,
-   "sha256": "bc2b244e50a9414c1feaae40bca0209686ad3b04759376b6bf48cffc6244c9e3"
+   "bytes": 2939,
+   "sha256": "3d56c6368c01dcd8396ff3dce4f28848d2ab5e45cbe3fd393310fd0515eceb41"
   },
   {
    "file": "requirements.txt",
@@ -170,6 +185,11 @@
    "file": "scripts/eval.py",
    "bytes": 6031,
    "sha256": "02738b48be1c1f24b046af44e022b0ddbfda5d7541084ef3d5e1686b62e01b1f"
+  },
+  {
+   "file": "scripts/eval_stream.py",
+   "bytes": 12086,
+   "sha256": "05e3623999c3d5d77c5cc3358a2927a5a867e57f02d64f0af868efd6a176890f"
   },
   {
    "file": "scripts/mine_candidates.py",
@@ -198,8 +218,8 @@
   },
   {
    "file": "SKILL.md",
-   "bytes": 5271,
-   "sha256": "2ed867751965f8a95b7afa4a351c9d74f3a49cd47abdca9851c77d55cd345b90"
+   "bytes": 6499,
+   "sha256": "56015da6a5b795189dac3a52a3f0f4060f9b3047426fab393846b8442547261b"
   },
   {
    "file": "tests/selftest.py",

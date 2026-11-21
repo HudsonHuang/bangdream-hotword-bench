@@ -4,6 +4,7 @@
 [![Samples](https://img.shields.io/badge/samples-283-blue)](#数据)
 [![Audio](https://img.shields.io/badge/audio-32.6min-orange)](#数据)
 [![Chunked audio](https://img.shields.io/badge/chunked%20audio-37.3min-red)](#数据)
+[![v0.3 gold](https://img.shields.io/badge/v0.3-gold%2092.4min-green)](#v03--流式黄金集)
 
 # bangdream-hotword-bench
 
@@ -17,7 +18,8 @@
 - 🎧 **测试集**：单套 test-base，283 条句级音频（141 pos / 142 neg），15 组，来自 215 个公开 YouTube 直播
 - 🎬 **长音频**：283 条按句拼接（句间 1 秒静音）成 37.3 分钟分片音频 + 每条句子的时长轴；逐句标注视频为本地派生文件，不随数据集发布
 - 🧵 **连续片段 v0.2**：dense-20，20 分钟不切片的直播（181 句 / 85 处专名提及），测真跑起来的连续流召回
-- 🧪 **评测**：模型无关的评测 skill，两种模式（ASR / 同传）
+- 🏅 **流式黄金集 v0.3**：32 条完整高光（92.4 分钟），16 kHz WAV + 人工精标中文 SRT；同时评节奏、翻译质量、热词
+- 🧪 **评测**：模型无关的评测 skill，两种模式（ASR / 同传）+ v0.3 流式打分
 - 📊 **结果**：ASR2 与 qwen 两个 ASR 前端在两种模式下的指标见下文
 
 ## 数据怎么构建的
@@ -79,6 +81,7 @@ test-base（音频 + 视频 + 标注 + 来源信息）
 | 长音频分片 | 37.3 分钟，1 个 1 小时分片（`audio_1h/`） |
 | 源视频 | 215 个公开 YouTube 直播 |
 | **dense-20（v0.2）** | 20 分钟连续音频，181 句，85 处专名提及，13 组；见 `skill/docs/DENSE20.md` |
+| **gold-v0.3** | 32 条完整高光，92.4 分钟，16 kHz WAV + 1,525 条人工精标中文 cue；见 `skill/docs/GOLD03.md` |
 
 ```json
 {
@@ -122,6 +125,33 @@ v0.1 的 283 条是句级切片，每条一个判定；v0.2 补一段 **20 分�
 
 评分：`skill/scripts/score_mentions.py`（mention-level，按句 × 组）；与 v0.1 合并的参考结果见
 [results/dense20_results.md](results/dense20_results.md)，跑法见 [skill/docs/LIVE_INTERP.md](skill/docs/LIVE_INTERP.md)。
+
+## v0.3 · 流式黄金集（gold-v0.3）
+
+v0.2 还是「一段连续直播」；v0.3 换成 **32 条人工精修过的完整高光**，每条都有自己的 WAV + 中文 SRT，
+用来同时看流式系统最关心的三件事：
+
+- **回显节奏**：中文第一次出现离参考句结束多远；
+- **翻译质量**：中文和人工译文的字符 F1；
+- **热词质量**：参考句里的人名/乐队名有没有出现在中文里。
+
+| 文件 | 说明 |
+|---|---|
+| `gold-v0.3/audio/*.wav`（HF） | 32 条，16 kHz mono，113–991 秒，共 92.4 分钟 |
+| `gold-v0.3/srt/*.srt`（HF） | 人工修正中文 SRT，cue 带 `[speaker=arl|myk|nnk|ritsu|yuno]` |
+| `skill/data/gold_v03.jsonl` | 32 条机器可读清单（时长、cue 数、说话人、点名次数、文件路径） |
+| `skill/scripts/eval_stream.py` | 节奏 / 字符 F1 / 人名召回三合一打分 |
+| `skill/docs/GOLD03.md` | 口径、跑法、参考结果 |
+
+2–5 分钟参考结果（`9u5-VQG61So_hl04` 的 120–300 秒）：
+
+| 配置 | coverage | first-zh p50 | mean | charF1 | 人名召回 | 成本 |
+|---|---:|---:|---:|---:|---:|---:|
+| Paraformer + qwen3.8-max | 95.7% | 1.77 s | 1.39 s | 0.430 | 76.9% | 2.71 元/h |
+| qwen-audio-3.1 + reference | 91.5% | 1.34 s | 0.72 s | 0.445 | 92.3% | 2.74 元/h |
+| qwen-audio-3.1 + ICL + 1 轮上下文 | 91.5% | 1.42 s | 0.76 s | 0.456 | 84.6% | 3.68 元/h |
+
+完整结果与复现命令：`results/gold03_results.md`、`skill/docs/GOLD03.md`。
 
 ## 怎么用
 
@@ -169,10 +199,10 @@ python scripts/eval.py --task zh  --submission my_zh.jsonl    # 同传模式
 ```text
 .
 ├── skill/                  # 模型无关的评测 skill（eval / 校验 / 扩名字 / 翻译批处理）
-│   ├── scripts/            # eval.py · score_mentions.py · run_parallel.py · validate_submission.py …
-│   ├── data/               # test_base.jsonl（283 条）+ dense20*.json（v0.2 连续片段）
+│   ├── scripts/            # eval.py · score_mentions.py · eval_stream.py · run_parallel.py · validate_submission.py …
+│   ├── data/               # test_base.jsonl（283 条）+ dense20*.json（v0.2）+ gold_v03.jsonl（v0.3）
 │   ├── hotwords/           # 热词与各后端导出
-│   └── docs/               # 打分规则 / 提交 / 扩展新名字 / 翻译链路
+│   └── docs/               # 打分规则 / 提交 / 扩展新名字 / 翻译链路 / v0.3 黄金集
 ├── hotwords/               # 热词库（可直接下载）
 ├── docs/                   # 数据集说明（DATASET.md）与评测协议（EVALUATION.md）
 ├── results/                # 当前指标（JSON + Markdown）
