@@ -44,7 +44,7 @@ python scripts/score_mentions.py --merged runs/dense20/para/merged.jsonl --task 
 |---|---|---|---|
 | 基线 | Paraformer-Realtime-V2 + live 默认词表 | qwen3.8-max | `--mt-mode force` |
 | 新 Para | Paraformer-Realtime-V2 + v0.1 词表 | qwen3.8-max | `--mt-mode icl --hotword-cards hotwords/name_cards.json --correct-names` |
-| 新 3.1 | qwen-audio-3.1-asr-flash-streaming + 热词 | qwen3.8-max | `--mt-mode icl` |
+| 新 3.1 | qwen-audio-3.1-asr-flash-streaming + 热词 | qwen3.8-max | `--mt-mode reference`（默认；ICL 用 `--mt-mode icl`） |
 
 统一关闭上下文（`--context-turns 0`），结果见 `results/dense20_results.md`。
 
