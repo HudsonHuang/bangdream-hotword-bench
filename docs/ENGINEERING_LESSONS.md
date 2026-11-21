@@ -1,33 +1,13 @@
-# 从 live-interpreter + hotword-bench 沉淀的工程经验（完整版）
+# 从 live-interpreter + hotword-bench 沉淀的工程经验（2026/11/21）
 
-> 依据：上一个 session 的 36 个 turn（从装 exe、做 benchmark v0.1/v0.2、调热词、接 3.1，到 PR/打包）+ 本次的 3.1 调优、成本、gold-v0.3。
-> 上一版总结只看了最后几次对话，漏了 benchmark 构建、虚警 frontier、规则门控被证伪、3.8-live 硬限制、接线 bug 这些关键段落。这里重写完整版。
 
 ## 两个仓库的背景
 
-- **live-interpreter**：Windows 实时字幕/同传系统。启动器负责设置和音频设备，backend 负责起 worker；worker 从 stdin 读 16k PCM，把事件按 JSONL 打到 stdout。
+- **live-interpreter**：本次优化的Windows 实时字幕/同传系统。启动器负责设置和音频设备，backend 负责起 worker；worker 从 stdin 读 16k PCM，把事件按 JSONL 打到 stdout。
   - PR：https://github.com/starry335/live-interpreter/pull/2
   - 模块框图：https://github.com/starry335/live-interpreter/blob/feat/hotwords-icl-31/docs/ARCHITECTURE.md
 - **bangdream-hotword-bench**：热词与流式评测集。v0.1 是 283 条句级切片，v0.2 是 dense-20 连续流，v0.3 是 32 条人工精标高光（92.4 分钟 / 1,525 cue）。
 - 本文的结论来自 interp 仓库的 PR #2 调试过程，以及 benchmark v0.1→v0.3 的构建过程。
-
----
-
----
-
-## 先纠正上一版漏掉的东西
-
-1. **评测口径混用过。** 有一轮把「流式跑出来的 live 默认词表」放进了切片表；后来严格单句归属一改，qwen 流式 ASR F1 从 90.1 掉到 74.1。不是模型变了，是句子归属规则变了。
-2. **规则门控被实测证伪。** 乐队名没有「ちゃん/さん」，旧规则会删掉真名字；在 ICL 输出上，规则门控删掉 14 个真名、只换掉 3 个假名，净亏。
-3. **3.1 的 `input.context` 会让 ASR 召回掉约 3 个点。** 上下文应该给翻译，不要给识别。
-4. **qwen3.8-live 有硬限制。** 会话约 15 分钟必断；`speaker_detection` VAD 对 3–10 秒短切片不触发，154/283 条空结果。这不是调参能救的，直接停测。
-5. **热词接线出过静默 bug。** 启动器白名单漏了 `qwen3.1-audio`，GUI 里看着有热词，实际 worker 拿到的是 0 条，等于裸跑。
-6. **超热词权重 50 会反噬长会话。** 短片段召回有效，但 37 分钟流式 ASR F1 从 90.1 掉到 85.7，误触发 3→15。
-7. **上下文曾经把成本放大 7 倍。** `context_turns=0` 的 `[-0:]` 切片错误，把全部历史字幕塞进 prompt；3 分钟从 2.71 元/小时变成 19.9 元/小时。
-8. **计时口径错过一次。** 回放时间戳从 worker 进程启动算，多算了 1–2 秒连接时间；首批「首字延迟」被高估，后来才用 `ready` 事件校正。
-9. **数据完整性踩过坑。** HF 上的旧音频镜像解码只出 996 秒，FTP 原始数据才是对的；不校验就评测，结论会全错。
-
-这些不是“细节”，它们直接改变了模型选型和最终默认配置。
 
 ---
 
