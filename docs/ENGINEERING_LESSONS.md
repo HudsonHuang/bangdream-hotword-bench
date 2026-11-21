@@ -6,6 +6,8 @@
 ## 两个仓库的背景
 
 - **live-interpreter**：Windows 实时字幕/同传系统。启动器负责设置和音频设备，backend 负责起 worker；worker 从 stdin 读 16k PCM，把事件按 JSONL 打到 stdout。
+  - PR：https://github.com/starry335/live-interpreter/pull/2
+  - 模块框图：https://github.com/starry335/live-interpreter/blob/feat/hotwords-icl-31/docs/ARCHITECTURE.md
 - **bangdream-hotword-bench**：热词与流式评测集。v0.1 是 283 条句级切片，v0.2 是 dense-20 连续流，v0.3 是 32 条人工精标高光（92.4 分钟 / 1,525 cue）。
 - 本文的结论来自 interp 仓库的 PR #2 调试过程，以及 benchmark v0.1→v0.3 的构建过程。
 
