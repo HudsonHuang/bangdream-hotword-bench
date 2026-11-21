@@ -35,6 +35,7 @@
 - 🏅 **v0.3**：32 条完整高光（92.4 分钟），16 kHz WAV + 人工精标中文 SRT（1,525 cue）
 - 🧪 **评测**：模型无关的评测 skill，三种口径（ASR / 同传 / 流式）
 - 📊 **结果**：v0.1/v0.2 热词指标、v0.3 节奏/质量/热词指标见下文
+- 📚 **工程经验**：从 v0.1→v0.3 和 live-interp 调试里沉淀的 10 条，见 [docs/ENGINEERING_LESSONS.md](docs/ENGINEERING_LESSONS.md)
 
 ## 数据怎么构建的
 
@@ -237,7 +238,7 @@ python scripts/eval.py --task zh  --submission my_zh.jsonl    # 同传模式
 │   ├── hotwords/           # 热词与各后端导出
 │   └── docs/               # 打分规则 / 提交 / 扩展新名字 / 翻译链路 / v0.3 黄金集
 ├── hotwords/               # 热词库（可直接下载）
-├── docs/                   # 数据集说明（DATASET.md）与评测协议（EVALUATION.md）
+├── docs/                   # 数据集说明（DATASET.md）、评测协议（EVALUATION.md）、工程经验（ENGINEERING_LESSONS.md）
 ├── results/                # 当前指标（JSON + Markdown）
 └── LICENSE / LICENSE-CODE  # 标注与热词 CC BY-NC 4.0；代码 MIT
 ```
