@@ -190,9 +190,12 @@ v0.2 还是「一段连续直播」；v0.3 换成 **32 条人工精修过的完�
 ```python
 from datasets import load_dataset
 
-ds = load_dataset("zhongyihuang/bangdream-hotword-bench")
+ds = load_dataset("zhongyihuang/bangdream-hotword-bench", "test_base")
 row = ds["train"][0]
-print(row["audio"]["path"], row["allowed_zh"])
+print(row["audio"], row["allowed_zh"])
+
+gold = load_dataset("zhongyihuang/bangdream-hotword-bench", "gold_v03")
+print(gold["train"][0]["clip_id"], gold["train"][0]["cues"])
 ```
 
 ### 2. 拿热词表
