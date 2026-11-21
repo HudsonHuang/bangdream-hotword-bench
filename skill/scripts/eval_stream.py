@@ -149,6 +149,25 @@ def load_run(path: Path, time_unit: str, ready_offset: bool = True) -> tuple[Lis
     return segments, origin
 
 
+def load_usage(path: Path) -> Dict[str, int]:
+    totals = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0, "cached_tokens": 0}
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(event, dict) or event.get("event") != "translation_usage":
+            continue
+        usage = event.get("usage") or {}
+        totals["calls"] += 1
+        totals["prompt_tokens"] += int(usage.get("prompt_tokens") or 0)
+        totals["completion_tokens"] += int(usage.get("completion_tokens") or 0)
+        totals["cached_tokens"] += int(
+            (usage.get("prompt_tokens_details") or {}).get("cached_tokens") or 0
+        )
+    return totals
+
+
 def summarize(values: Iterable[float]) -> Dict[str, float]:
     data = [float(value) for value in values]
     if not data:
@@ -210,6 +229,24 @@ def score(segments: List[Dict[str, object]], cues: List[Dict[str, object]], offs
         float(seg["first_zh"]) + offset for seg in segments if seg.get("first_zh") is not None
     )
     gaps = [b - a for a, b in zip(zh_times, zh_times[1:])]
+    durations = [float(seg["end"]) - float(seg["begin"]) for seg in segments]
+    short_sources = sum(
+        1 for seg in segments
+        if float(seg["end"]) - float(seg["begin"]) < 1.2 or len(str(seg.get("source") or "")) < 8
+    )
+    picked_per_cue = [len(row["segments"]) for row in rows if row.get("matched")]
+    quality = {}
+    hyps = [str(row["machine"]) for row in rows if row.get("matched")]
+    refs = [str(row["cue"]["text"]) for row in rows if row.get("matched")]
+    if hyps:
+        try:
+            import sacrebleu
+            quality = {
+                "bleu": round(sacrebleu.corpus_bleu(hyps, [refs], tokenize="zh").score, 2),
+                "chrf": round(sacrebleu.corpus_chrf(hyps, [refs]).score, 2),
+            }
+        except Exception as exc:  # optional dependency
+            quality = {"error": f"{type(exc).__name__}: {exc}"}
     return {
         "cues": len(cues),
         "covered": covered,
@@ -217,6 +254,13 @@ def score(segments: List[Dict[str, object]], cues: List[Dict[str, object]], offs
         "first_zh": summarize(first_lat),
         "final_zh": summarize(final_lat),
         "char_f1": summarize(f1s),
+        "quality": quality,
+        "fragmentation": {
+            "src_segments": len(segments),
+            "short_src_ratio": short_sources / len(segments) if segments else 0.0,
+            "src_duration": summarize(durations),
+            "segments_per_cue": statistics.mean(picked_per_cue) if picked_per_cue else 0.0,
+        },
         "names": {"total": name_total, "hit": name_hit,
                   "recall": name_hit / name_total if name_total else 0.0},
         "zh_gap": summarize(gaps),
@@ -259,6 +303,7 @@ def main() -> int:
     result["offset"] = args.offset
     result["ready_offset"] = origin
     result["label"] = args.label
+    result["usage"] = load_usage(Path(args.run))
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -273,6 +318,13 @@ def main() -> int:
         f"- first Chinese: {fmt(result['first_zh'])}",
         f"- final Chinese: {fmt(result['final_zh'])}",
         f"- charF1: p50 {result['char_f1']['p50']:.3f} / mean {result['char_f1']['mean']:.3f}",
+        f"- BLEU / chrF: {result['quality'].get('bleu', 'n/a')} / {result['quality'].get('chrf', 'n/a')}",
+        f"- fragmentation: {result['fragmentation']['src_segments']} src segments, "
+        f"short {result['fragmentation']['short_src_ratio']:.1%}, "
+        f"{result['fragmentation']['segments_per_cue']:.2f} segments/cue",
+        f"- MT usage: {result['usage']['calls']} calls, "
+        f"{result['usage']['prompt_tokens']} prompt / {result['usage']['completion_tokens']} completion tokens, "
+        f"{result['usage']['cached_tokens']} cached",
         f"- names: {result['names']['hit']}/{result['names']['total']} = {result['names']['recall']:.1%}",
         f"- Chinese display gap: {fmt(result['zh_gap'])}",
         "",
@@ -295,6 +347,12 @@ def main() -> int:
         "first_zh_p50": round(result["first_zh"]["p50"], 3),
         "first_zh_mean": round(result["first_zh"]["mean"], 3),
         "char_f1_mean": round(result["char_f1"]["mean"], 3),
+        "bleu": result["quality"].get("bleu"),
+        "chrf": result["quality"].get("chrf"),
+        "short_src_ratio": round(result["fragmentation"]["short_src_ratio"], 4),
+        "segments_per_cue": round(result["fragmentation"]["segments_per_cue"], 3),
+        "prompt_tokens": result["usage"]["prompt_tokens"],
+        "completion_tokens": result["usage"]["completion_tokens"],
         "name_recall": round(result["names"]["recall"], 4),
         "out": str(out),
     }, ensure_ascii=False))
