@@ -42,3 +42,27 @@ benchmark 只判最终文本，模型无关。两种测试模式都从音频出�
 - 只有一套测试集，避免调参泄漏；不要在测试集上拟合热词权重后宣称泛化。
 - 打分脚本对中文/日文名称做归一化（全半角、片假名→平假名、长音）；英文名忽略空格与大小写。
 - 空输出、缺样本都会在报告中单列，不会静默算分。
+
+## 5. v0.3 流式评测（`eval_stream.py`）
+
+v0.1/v0.2 评的是「名字对不对」；v0.3 在此之上同时评「中文什么时候上屏」和「中文质量」：
+
+```bash
+python skill/scripts/eval_stream.py \
+  --run runs/31_ref/events.jsonl --srt gold-v0.3/srt/xxx.srt \
+  --label "3.1 reference" --out runs/31_ref/report
+```
+
+输入是带时间戳的 JSONL：每个翻译事件要有 `sentence_id` 和 `_recv_mono`（或 `display_time_s`），
+source final 要有 `begin_time/end_time`（默认毫秒）。
+
+输出：
+
+- `coverage`：被 ASR 终句覆盖的参考 cue 比例；
+- `first_zh` / `final_zh`：首次中文 / 终译相对 cue.end 的延迟（p50/mean/p90/max）；
+- `charF1`：重叠句最终中文拼接 vs 人工 SRT 的字符 F1；
+- `names`：人工 SRT 里出现的规范名，在中文里的召回；
+- `zh_gap`：相邻两次首次中文的间隔。
+
+`ready` 事件存在时，脚本会自动把 `_recv_mono` 减去 worker 启动时间，对齐到开始喂音频；
+没有 `ready` 时用 `--no-ready-offset`。详细口径见 `skill/docs/GOLD03.md`。
