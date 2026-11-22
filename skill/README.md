@@ -10,6 +10,7 @@
 | 测试集标注 | `data/test_base.jsonl` | 283 条句级样本（141 pos / 142 neg），每条带 YouTube ID、源时间与视频内时间 |
 | dense-20（v0.2） | `data/dense20*.json` | 20 分钟连续片段，181 句 / 85 处专名提及 |
 | gold-v0.3 | `data/gold_v03.jsonl` | 32 条完整高光（92.4 分钟）清单；WAV + 人工 SRT 在 HF |
+| v0.4-full | `data/v04/` | 40:56 完整直播不切片，471 个自动字幕 unit；音频在 HF `v0.4-full/` |
 | 音频 / 视频 | Hugging Face | https://huggingface.co/datasets/zhongyihuang/bangdream-hotword-bench |
 | 评测 skill | `scripts/` | `--task asr`、`--task zh`、`eval_stream.py`（v0.3 节奏/质量/热词） |
 

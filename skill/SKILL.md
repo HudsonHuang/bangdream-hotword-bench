@@ -12,6 +12,7 @@ description: 邦多利烤肉场景（BanG Dream! / 梦限大 MewType）的人名
 - **测试集**：test-base，283 条句级音频（141 pos / 142 neg），15 组，来自 215 个公开 YouTube 直播；
 - **连续片段**：dense-20（v0.2），20 分钟不切片音频，181 句 / 85 处专名提及，用于连续流召回；
 - **流式黄金集**：gold-v0.3，32 条完整高光，92.4 分钟，16 kHz WAV + 人工精标中文 SRT（1,525 cue）；
+- **完整长视频**：v0.4-full，40:56 不切片，471 个自动字幕 unit，测长时间人名召回/误替换；
 - **三种测试口径**：ASR（音频 → 日文转写）、同传（音频 → 最终中文）、流式（节奏 + 质量 + 热词）；
 - 数据（音频 / 视频 / 标注）在 Hugging Face：https://huggingface.co/datasets/zhongyihuang/bangdream-hotword-bench
 
