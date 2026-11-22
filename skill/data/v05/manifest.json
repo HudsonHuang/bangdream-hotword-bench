@@ -1,0 +1,8 @@
+{
+ "dataset": "v0.5-nnk",
+ "description": "野乃花两段：晾衣服日常 + 魔法少女魔女裁判游戏",
+ "clips": [
+  {"id":"clip_a","title":"想帮妈妈晾衣服","duration_s":106.5,"audio":"clip_a_106s.wav","ocr":"clip_a_ocr.jsonl"},
+  {"id":"clip_b","title":"魔法少女ノ魔女裁判 50:20 片段","duration_s":110.0,"audio":"clip_b_110s.wav"}
+ ]
+}

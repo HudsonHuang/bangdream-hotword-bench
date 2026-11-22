@@ -1,0 +1,34 @@
+{
+  "name": "woritsu_v0.1",
+  "description": "不带律场景组合测试集：v0.3 手标黄金集 + v0.4 完整长视频 + v0.5 野乃花两段",
+  "subsets": [
+    {
+      "id": "v0.3",
+      "kind": "human_gold",
+      "path": "data/gold_v03.jsonl",
+      "audio": "gold-v0.3/audio",
+      "reference": "gold-v0.3/srt",
+      "measures": ["rhythm", "charF1", "BLEU", "names", "cost"]
+    },
+    {
+      "id": "v0.4",
+      "kind": "full_video_auto_ref",
+      "path": "data/v04/units.jsonl",
+      "audio": "v0.4-full/audio16k.wav",
+      "reference": "v0.4-full/ref.ja.srt",
+      "measures": ["coverage", "names", "long_segments"]
+    },
+    {
+      "id": "v0.5",
+      "kind": "nnk_two_clips",
+      "path": "data/v05/manifest.json",
+      "audio": "v0.5-nnk/clip_a_106s.wav, v0.5-nnk/clip_b_110s.wav",
+      "measures": ["names", "rhythm", "long_segments"]
+    }
+  ],
+  "notes": [
+    "v0.3 是唯一有人工中文 SRT 的 BLEU/charF1 子集。",
+    "v0.4 自动字幕稀疏，只适合人名回归和长句统计。",
+    "v0.5 用于复查日常说话/游戏场是否再被律/由乃过纠。"
+  ]
+}

@@ -1,0 +1,211 @@
+<!doctype html><meta charset="utf-8"><title>woritsu_v0.1 diff</title>
+<style>
+body{font:14px/1.5 -apple-system,Segoe UI,Microsoft YaHei;margin:24px;background:#0f1115;color:#e6e6e6}
+h1{font-size:24px} h2{font-size:18px;margin-top:28px;border-top:1px solid #333;padding-top:16px}
+.note{color:#aaa} .cards{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+.cards div{background:#1b1f27;border:1px solid #333;border-radius:8px;padding:10px 14px;min-width:110px}
+.cards b{display:block;font-size:18px} .cards span{color:#999;font-size:12px}
+table{width:100%;border-collapse:collapse} th,td{border-bottom:1px solid #2a2f3a;padding:8px;vertical-align:top}
+th{text-align:left;color:#aaa;font-weight:500} .t{white-space:nowrap;color:#888;width:64px}
+.src{color:#bbb;width:32%} .diff{font-size:15px} del{color:#ff6b6b;background:#3a1d1d;text-decoration:line-through}
+ins{color:#6bff9e;background:#173a24;text-decoration:none} .same{color:#888;font-style:italic}
+.summary{border:1px solid #333;border-radius:8px;padding:12px 16px;background:#171a21}
+.summary td,.summary th{padding:6px 10px}
+</style><h1>woritsu_v0.1 · 优化前后 diff</h1>
+<p class="note">红=优化前，绿=优化后；完全一致的句子已收起。此页是逐句字幕 diff，不是字级人工评测。</p>
+<div class="summary"><h2 style="border:0;margin:0 0 8px">聚合摘要</h2>
+<table><thead><tr><th>子集</th><th>优化前</th><th>优化后</th><th>说明</th></tr></thead><tbody>
+<tr><td>v0.3 gold（180s）</td><td>BLEU 18.89 / charF1 .437 / first-zh 1.26s</td><td>BLEU 17.16 / charF1 .393 / first-zh 0.23s</td><td>字数草稿把首字提前；BLEU 受重跑波动影响</td></tr>
+<tr><td>v0.4 前 10 分钟</td><td>草稿 7 / 终句 187 / p90 3.56s / calls 187</td><td>草稿 60 / 终句 186 / p90 3.56s / calls 186</td><td>草稿确实跑起来了；终句长度未变</td></tr>
+<tr><td>v0.5 晾衣服（106s）</td><td>草稿 0 / 律 0 / 由乃 0</td><td>草稿 5 / 律 0 / 由乃 0</td><td>日常句不再冒律/由乃</td></tr>
+<tr><td>v0.5 魔女裁判（110s）</td><td>草稿 0 / 律 0 / 希罗 9</td><td>草稿 16 / 律 0 / 希罗 9</td><td>ひろ→希罗稳定；仍有 1 句“由乃”待查</td></tr>
+</tbody></table></div>
+<section><h2>v0.3 gold · 2–5 分钟：时间草稿 → 字数草稿</h2><p class="note">同一条 180 秒；优化侧开 12 字草稿。BLEU/charF1 可能因重跑波动，重点看首字和草稿数。</p><div class="cards">
+      <div><b>70</b><span>首轮终句</span></div>
+      <div><b>70</b><span>优化终句</span></div>
+      <div><b>1 → 34</b><span>草稿</span></div>
+      <div><b>4.0s → 4.2s</b><span>终句 p90</span></div>
+      <div><b>1 → 1</b><span>&gt;8s 长句</span></div>
+      <div><b>7689 → 7723</b><span>prompt tokens</span></div>
+    </div>
+      <p class="same">另有 33 句完全一致，已收起。</p><table><thead><tr><th>时间</th><th>日语</th><th>译文 diff（红=优化前 / 绿=优化后）</th></tr></thead>
+      <tbody><tr><td class="t">1.0s</td>
+          <td class="src">そう！</td><td class="diff"><del>对！</del><ins>微风。</ins></td></tr><tr><td class="t">2.6s</td>
+          <td class="src">ちょっとやばいと思います。ほんとゆの食べろですよ。</td><td class="diff">我觉得有点不妙<ins>啊</ins>。真的，由乃你快吃<del>啊</del><ins>吧</ins>。</td></tr><tr><td class="t">14.1s</td>
+          <td class="src">率は結構ちゃんと食べてますし，私も結構ちゃんと食べてる。</td><td class="diff">率吃得还挺<del>多</del><ins>正常</ins>的，我也吃得挺<del>多</del><ins>正常</ins>的。</td></tr><tr><td class="t">17.8s</td>
+          <td class="src">じゃあ。</td><td class="diff"><del>那么</del><ins>……之后就再也没做过了吧</ins>。</td></tr><tr><td class="t">19.2s</td>
+          <td class="src">せっかくだから、うちに泊まりに来た日もちょっと話そうかな。</td><td class="diff">难得有机会，我也来聊聊你来我家<del>住的</del><ins>留宿</ins>那天<ins>的事</ins>吧。</td></tr><tr><td class="t">22.5s</td>
+          <td class="src">うわーすごそううちに泊まりに来た日。</td><td class="diff">哇，听起来好厉害<del>，</del><ins>。</ins>来我家住的那天。</td></tr><tr><td class="t">25.7s</td>
+          <td class="src">ちょユノから行きます。はい。</td><td class="diff">稍等，<ins>从</ins>由乃<del>先来</del><ins>开始</ins>。好的。</td></tr><tr><td class="t">32.9s</td>
+          <td class="src">ペッパーランチを作って一緒に食べましたね。</td><td class="diff">我们一起做了Pepper Lunch吃呢。<ins>嗯。</ins></td></tr><tr><td class="t">36.7s</td>
+          <td class="src">それと、えっと、シタラバとののかと半分こしたパピコですね。</td><td class="diff"><ins>然后，</ins>还有，呃，<ins>就是</ins>和<del>设乐以及</del><ins>Shitaraba、</ins>野乃花分着吃的<ins>那个</ins>P<del>APICO</del><ins>apico</ins>冰棒。</td></tr><tr><td class="t">54.3s</td>
+          <td class="src">ゆのちゃんとたばる。</td><td class="diff">由乃酱和<del>巴尔</del><ins>泷郎</ins>。</td></tr><tr><td class="t">59.8s</td>
+          <td class="src">なんか？</td><td class="diff"><del>怎么了？</del><ins>总觉得……</ins></td></tr><tr><td class="t">61.5s</td>
+          <td class="src">パピコを買ってきてって 私 リクエストしたんだけどさ。</td><td class="diff">我明明拜托你去买PapiCo<del>来着</del><ins>的</ins>。</td></tr><tr><td class="t">64.9s</td>
+          <td class="src">あの2本で1つじゃん。</td><td class="diff">那两<del>根</del><ins>个</ins>不是<del>算</del>一<del>个</del><ins>套</ins>吗。</td></tr><tr><td class="t">76.7s</td>
+          <td class="src">そうだよ、あの人。</td><td class="diff"><del>对</del><ins>小夜</ins>，<del>就是</del>那个人。</td></tr><tr><td class="t">78.0s</td>
+          <td class="src">あのアイス三個食べてたんだよね。そうだよね、三個食べてた。</td><td class="diff">你当时吃了三个冰淇淋对吧。<del>是</del><ins>对</ins>啊，吃了三个。</td></tr><tr><td class="t">81.3s</td>
+          <td class="src">もうののかも一緒にひろくしてやろうかと思ったもんねねあれはやばかった。</td><td class="diff">我<del>甚至</del><ins>当时还</ins>想<del>过要不要</del><ins>着干脆</ins>把野乃花也一起<del>算</del><ins>拉</ins>进<del>去，扩大范围</del><ins>来</ins>呢。<del>哎呀</del><ins>对吧</ins>，那<del>件事</del>真是太离谱了。</td></tr><tr><td class="t">86.4s</td>
+          <td class="src">で、まあ、えっと、ゆのがその日は合計702キロカロリーですね。少ないな、それでも。</td><td class="diff">然后<del>，嗯</del>，那个，由乃那天总共是702千卡。即使这样<del>也</del>还是很少呢。</td></tr><tr><td class="t">92.8s</td>
+          <td class="src">そうかな。</td><td class="diff"><del>是吗</del><ins>这样啊</ins>。</td></tr><tr><td class="t">93.7s</td>
+          <td class="src">少ないよ，でもペッパーランチ正直。</td><td class="diff"><del>量很</del><ins>太</ins>少<del>哦，</del><ins>了。</ins>不过Pepper Lunch<del>很</del><ins>挺</ins>实在<ins>的</ins>。</td></tr><tr><td class="t">96.9s</td>
+          <td class="src">そんな 食べてない気もするんだよね。</td><td class="diff">感觉<del>好像</del><ins>我</ins>也没吃<del>那么</del>多<del>呢</del><ins>少啊</ins>。</td></tr><tr><td class="t">98.8s</td>
+          <td class="src">うん、なんかね、一つだけ。</td><td class="diff">嗯，就一<del>个</del><ins>点</ins>。</td></tr><tr><td class="t">105.1s</td>
+          <td class="src">そうかもで、その日の率。</td><td class="diff">也许<ins>是</ins>吧，<del>就是</del>那天的比率。</td></tr><tr><td class="t">111.7s</td>
+          <td class="src">お昼に食べて</td><td class="diff">中午吃<ins>吧</ins></td></tr><tr><td class="t">113.3s</td>
+          <td class="src">はい、この後スタバの抹茶ティーラテ。</td><td class="diff">好的，之后<del>喝</del><ins>是</ins>星巴克的抹茶拿铁。</td></tr><tr><td class="t">119.6s</td>
+          <td class="src">えコンビニに置いた際。</td><td class="diff"><del>嗯</del><ins>咦</ins>，<del>放在</del><ins>去</ins>便利店的时候。</td></tr><tr><td class="t">122.6s</td>
+          <td class="src">好きすぎて家まで我慢できず、lからを買って食べておりまして。</td><td class="diff">因为太喜欢了，等不及回家，就<del>在L</del>买了<ins>埃尔卡拉吃了起</ins>来<del>吃</del>。</td></tr><tr><td class="t">129.0s</td>
+          <td class="src">これからうちでご飯だけど大丈夫ってうん大丈夫って言って</td><td class="diff"><ins>已经吃过了。虽然</ins>接下来要在<del>我</del>家<ins>里</ins>吃饭，<ins>但</ins>没关系吧？嗯，<del>你</del><ins>他</ins>说没关系<del>的</del>。</td></tr><tr><td class="t">133.2s</td>
+          <td class="src">食べた？</td><td class="diff"><ins>你一直在</ins>吃<del>了吗？</del><ins>呢。</ins></td></tr><tr><td class="t">135.7s</td>
+          <td class="src">で、お家に帰ってきてからペッパーランチを食べ。</td><td class="diff"><del>然后，</del>回到家之后吃了Pepper Lunch<del>。</del></td></tr><tr><td class="t">138.8s</td>
+          <td class="src">え、ハバネロビアスティック。</td><td class="diff">诶，哈瓦那辣椒<ins>味能量</ins>棒。</td></tr><tr><td class="t">140.8s</td>
+          <td class="src">これ、お菓子かな？</td><td class="diff">这<del>个，</del>是点心吗？</td></tr><tr><td class="t">142.4s</td>
+          <td class="src">おつまみ おつまみ 食べて。</td><td class="diff"><del>下酒菜，</del><ins>吃点</ins>下酒菜，吃点<ins>点心</ins>吧。</td></tr><tr><td class="t">155.7s</td>
+          <td class="src">夜食 夜食と思ってなるほど。</td><td class="diff">夜宵，<ins>原来是</ins>当<del>成是</del><ins>作</ins>夜宵啊，原来如此。</td></tr><tr><td class="t">158.6s</td>
+          <td class="src">で、この、そうだね、この夜食まで含めて合計が2000キロカロリーぐらい。</td><td class="diff">然后，这个，对啊，<del>连</del><ins>算上</ins>这顿夜宵<del>算在内</del>，总共大概2000大卡。</td></tr><tr><td class="t">164.9s</td>
+          <td class="src">まあまあまあセーフですね，そうだね，まあまあまあ。</td><td class="diff"><ins>啊，还好</ins>还好还好，算安全了<del>，</del><ins>。</ins>是啊<ins>。Soyo嘛</ins>，<ins>就还好</ins>还好还好。</td></tr><tr><td class="t">172.8s</td>
+          <td class="src">結構でも。</td><td class="diff">不用了<ins>也可以</ins>。</td></tr><tr><td class="t">175.7s</td>
+          <td class="src">抹茶ティーラテは168キロカロリーだから、そんなにカロリーがないんだね。</td><td class="diff">抹茶拿铁是168千卡，所以热量<del>其实没那么</del><ins>不算</ins>高呢。</td></tr></tbody></table></section><section><h2>v0.4 前 10 分钟：时间草稿 → 字数草稿 + 热词修正</h2><p class="note">同一条音频；优化后草稿在 partial 到 12 字时就发，不再等 4 秒。</p><div class="cards">
+      <div><b>187</b><span>首轮终句</span></div>
+      <div><b>186</b><span>优化终句</span></div>
+      <div><b>7 → 60</b><span>草稿</span></div>
+      <div><b>3.6s → 3.6s</b><span>终句 p90</span></div>
+      <div><b>1 → 1</b><span>&gt;8s 长句</span></div>
+      <div><b>21087 → 20256</b><span>prompt tokens</span></div>
+    </div>
+      <p class="same">另有 115 句完全一致，已收起。</p><table><thead><tr><th>时间</th><th>日语</th><th>译文 diff（红=优化前 / 绿=优化后）</th></tr></thead>
+      <tbody><tr><td class="t">0.9s</td>
+          <td class="src">たきだ。</td><td class="diff">是<del>立希</del><ins>泷</ins>。</td></tr><tr><td class="t">4.7s</td>
+          <td class="src">たきかえて。</td><td class="diff"><del>换成立希</del><ins>用泷替</ins>。</td></tr><tr><td class="t">21.8s</td>
+          <td class="src">はい！</td><td class="diff"><del>好的！</del></td></tr><tr><td class="t">45.6s</td>
+          <td class="src">戦国ユノです。</td><td class="diff">我是<del>战国</del><ins>千石</ins>由乃。</td></tr><tr><td class="t">48.5s</td>
+          <td class="src">見えますでしょうか？聞こえますでしょうか？</td><td class="diff"><del>能</del>看<ins>得</ins>到吗？<del>能</del>听<ins>得</ins>到吗？</td></tr><tr><td class="t">59.3s</td>
+          <td class="src">ええ。</td><td class="diff"><del>嗯</del><ins>是的</ins>。</td></tr><tr><td class="t">69.7s</td>
+          <td class="src">はい、そよをね。</td><td class="diff">好的，<del>素世</del><ins>微风呢</ins>。</td></tr><tr><td class="t">76.3s</td>
+          <td class="src">なんやかんや色々とでやばい。</td><td class="diff">各种<ins>乱七八糟的</ins>事情搞得<del>乱七八</del><ins>情况很</ins>糟<del>，太糟糕了</del>。</td></tr><tr><td class="t">83.1s</td>
+          <td class="src">ね、これね。どうやったら安定するんだろうね。</td><td class="diff">呐，这个啊。要怎么做才能稳定下来呢<del>。</del><ins>？</ins></td></tr><tr><td class="t">93.9s</td>
+          <td class="src">プツプツなってる？</td><td class="diff"><del>有</del>在<del>冒泡吗？</del><ins>滋滋作响。</ins></td></tr><tr><td class="t">106.0s</td>
+          <td class="src">これを！</td><td class="diff"><ins>把</ins>这个！</td></tr><tr><td class="t">126.9s</td>
+          <td class="src">大丈夫なんだ。じゃあこれでいきたいと思います</td><td class="diff">没问题的。那<del>我们</del>就按这个来吧。</td></tr><tr><td class="t">129.2s</td>
+          <td class="src">そよ、私の耳には普通に聞こえてて。</td><td class="diff"><del>素世</del><ins>所以</ins>，我<ins>耳朵</ins>听起来很正常<del>啊</del>。</td></tr><tr><td class="t">133.1s</td>
+          <td class="src">じゃあちょっとこれでやってみますね。音量とかも大丈夫そう？</td><td class="diff">那我先用这个试<del>试看</del><ins>一下</ins>。音量之类的没问题吧？</td></tr><tr><td class="t">142.7s</td>
+          <td class="src">え、今回のガチャなんですけど、ちょっと早速見に行きますか？</td><td class="diff">诶，这次的<ins>抽</ins>卡<del>池</del>，我们要不要赶紧去看看？</td></tr><tr><td class="t">147.0s</td>
+          <td class="src">あ、そうね。今日、あの、ともりちゃんの誕生日だから、ともりちゃんのガチャもやってるんですけど、まあ、こっちではなく。</td><td class="diff">啊，对哦。今天<del>呢，那个，因为</del>是灯的生日，所以也有灯的扭蛋<del>活动</del>，不过<del>嘛，</del>不是这边<del>这个</del><ins>的</ins>。</td></tr><tr><td class="t">157.7s</td>
+          <td class="src">SSRのね都とSSRのあられが登場しているということで。</td><td class="diff"><del>因为</del>SSR的都和SSR的阿拉蕾登场了。</td></tr><tr><td class="t">168.3s</td>
+          <td class="src">そよ。</td><td class="diff"><del>素世</del><ins>微风</ins>。</td></tr><tr><td class="t">177.6s</td>
+          <td class="src">アベムジカのSSRのスナップが出ました。</td><td class="diff">Ave Mujica的SSR快照<del>出来</del><ins>发布</ins>了。</td></tr><tr><td class="t">181.2s</td>
+          <td class="src">一旦なんかお伏せで引いとくか。</td><td class="diff">要不先扣着<del>当伏牌</del><ins>抽一张</ins>吧。</td></tr><tr><td class="t">186.5s</td>
+          <td class="src">8。</td><td class="diff">8<del>。</del><ins>.</ins></td></tr><tr><td class="t">192.8s</td>
+          <td class="src">はい、ということで引いていこうと思います。</td><td class="diff">好的，那么<ins>接下来</ins>我就来抽一下。</td></tr><tr><td class="t">202.4s</td>
+          <td class="src">縛りを貸していきます。こちらじゃん。</td><td class="diff">我来借出<del>束缚</del><ins>限制条件</ins>。就是这边<ins>吧</ins>。</td></tr><tr><td class="t">204.6s</td>
+          <td class="src">え、ガチャチャレンジ企画ということで、50連までにSSRのゆのことあられ。</td><td class="diff">诶，<del>作</del><ins>因</ins>为<ins>是</ins>抽卡挑战企划，要在50连之内抽<del>出</del><ins>到</ins>SSR的由乃和阿拉蕾。</td></tr><tr><td class="t">209.6s</td>
+          <td class="src">たり揃ったらご褒美スイーツ。</td><td class="diff"><ins>等</ins>凑齐了就奖励甜点。</td></tr><tr><td class="t">212.6s</td>
+          <td class="src">エスエスアールスナップが一枚出るごとに、ご褒美のお菓子を購入します。</td><td class="diff">每抽<del>到</del><ins>出</ins>一张SSR卡，就买一份零食作为奖励。</td></tr><tr><td class="t">218.4s</td>
+          <td class="src">天井までSSRみやこ、SSRあられが一度も出ないという事故を起こした場合は、ASMR配信をいたします。</td><td class="diff">如果发生抽到<del>保底</del><ins>天井</ins>都没出SSR都子、SSR阿拉蕾<del>一次都没出的</del><ins>这种</ins>惨剧<ins>的话</ins>，我<del>就</del>会进行ASMR直播。</td></tr><tr><td class="t">232.9s</td>
+          <td class="src">条件を緩和しました。戦国ユノさんのことなんで、ちょっと。</td><td class="diff">我放宽了条件。<del>毕竟</del><ins>因为</ins>是<del>战国</del><ins>千石</ins>由乃的事，所以稍微……</td></tr><tr><td class="t">244.7s</td>
+          <td class="src">段階を経て、ご褒美スイーツはまあちょっと千円ぐらいの、なんかちょっと高めのスイーツでも食べようかなと。</td><td class="diff">分阶段<del>进行</del><ins>来</ins>，作为奖励的甜点<del>嘛</del>，<del>就</del><ins>我想</ins>吃个<del>大概</del>一千日元左右、稍微贵一点的甜<del>点吧</del><ins>品</ins>。</td></tr><tr><td class="t">253.1s</td>
+          <td class="src">あえっと、このスナップっていうのは夢見たの、あの二種類のスナップですね。</td><td class="diff">啊，这个<del>“</del>快照<del>”</del>指的是梦限大的那两种快照<ins>对吧</ins>。</td></tr><tr><td class="t">265.0s</td>
+          <td class="src">いや、せっかくなんでね、全種コンプリート目指していきたいんですけど。</td><td class="diff">不，难得有机会嘛，我想以<del>全种类收</del>集齐全<ins>部种类</ins>为目标。</td></tr><tr><td class="t">274.7s</td>
+          <td class="src">あ、戦国ゆのさんガチャ配信で二度、あの、とんでもねえ事起こしておりまして。</td><td class="diff">啊，<del>在战国</del><ins>千石</ins>由乃<del>的</del><ins>在</ins>抽卡直播里<del>发生过</del>两次，那个，<del>非常</del><ins>搞出了</ins>不得了的事情。</td></tr><tr><td class="t">279.1s</td>
+          <td class="src">まあ、一回目はガチャ配信じゃなかったんですけど、リリース前にね。</td><td class="diff"><del>嘛，</del><ins>不过</ins>第一次直播<del>其实</del><ins>并</ins>不是抽卡直播<del>啦</del>，是在<del>游戏</del>上线之前<ins>嘛</ins>。</td></tr><tr><td class="t">284.3s</td>
+          <td class="src">お試しアカウントでお試し配信みたいな。</td><td class="diff">就像用试用账号做<del>一下</del>试播那样。</td></tr><tr><td class="t">287.4s</td>
+          <td class="src">アワーノーツ先行配信みたいなのをした時に</td><td class="diff">在举办类似《Our Notes》先行配信<ins>活动</ins>的时候</td></tr><tr><td class="t">292.3s</td>
+          <td class="src">あった石を全て溶かして、SSR 違う SR の戦国ゆのさんだけ出ないという事故。</td><td class="diff">把攒的石头全抽光了，<ins>结果</ins>SSR<del>……不对</del><ins>没出</ins>，连SR的<del>战国</del><ins>千石</ins>由乃都没出<del>，真是</del><ins>的</ins>惨<del>案</del><ins>剧</ins>。</td></tr><tr><td class="t">298.9s</td>
+          <td class="src">あのゆのちゃんのピックアップが来てた時、ゆのちゃんの初SSRが出た時は、あのペショテンどころの騒ぎではないという。</td><td class="diff">当时由乃酱的卡池<del>上线、</del><ins>开启，</ins>由乃酱的首张SSR<del>推出的</del><ins>登场</ins>时<del>候</del>，那<ins>场面</ins>可<ins>远</ins>不是<ins>“</ins>佩肖腾<ins>”</ins>那种程度能比的骚动啊。</td></tr><tr><td class="t">307.5s</td>
+          <td class="src">まあ、大事故を起こしまして 懐かしいですね。</td><td class="diff">嗯，出了<del>场</del><ins>个</ins>大事故呢。真让人怀念啊。</td></tr><tr><td class="t">310.7s</td>
+          <td class="src">でもそこから戦国のそよには運が向いてきてますので。</td><td class="diff">不过<ins>，</ins>从那时起<del>，战国</del><ins>千石由乃</ins>的<del>素世</del>运气就开始好转了。</td></tr><tr><td class="t">319.5s</td>
+          <td class="src">え、さすがに大丈夫でしょう。</td><td class="diff">啊，这<del>总</del><ins>应</ins>该没问题吧。</td></tr><tr><td class="t">321.4s</td>
+          <td class="src">そよ、あたしはね、夢見たずのことが大好き。果たして都子、あられ、そしてそよのりつさん。</td><td class="diff"><del>素世</del><ins>小夜</ins>，我呢，最喜欢梦限大了。还有都子、阿拉蕾，以及<del>素世</del><ins>Snap</ins>的律小姐。</td></tr><tr><td class="t">342.2s</td>
+          <td class="src">え？</td><td class="diff"><del>啊</del><ins>咦</ins>？</td></tr><tr><td class="t">347.7s</td>
+          <td class="src">カチンカチン。</td><td class="diff">硬邦邦<ins>的</ins>。</td></tr><tr><td class="t">352.8s</td>
+          <td class="src">これどれどれ買えばいいんだ？これか？</td><td class="diff"><del>这些里面</del>该买哪个啊？这个吗？</td></tr><tr><td class="t">356.6s</td>
+          <td class="src">８</td><td class="diff">8<ins>.</ins></td></tr><tr><td class="t">390.4s</td>
+          <td class="src">よし、ということで引いていきたいと思います。まず、お伏せの一回。</td><td class="diff">好，那么我们就开始抽<del>卡</del>吧。首先是<del>背面朝下的</del><ins>暗牌</ins>一次。</td></tr><tr><td class="t">395.5s</td>
+          <td class="src">行きます。そよ皆様。</td><td class="diff">要开始了。<del>素世</del><ins>那么</ins>，各位。</td></tr><tr><td class="t">406.0s</td>
+          <td class="src">なつめパイセン。</td><td class="diff">夏目<del>学长</del><ins>前辈</ins>。</td></tr><tr><td class="t">408.7s</td>
+          <td class="src">ほな行きますか？10連よろしくお願いいたします。</td><td class="diff">那我们开始吧？<ins>麻烦来个</ins>十连抽<del>就拜托了</del>。</td></tr><tr><td class="t">415.8s</td>
+          <td class="src">ここから10連目からスタートいたします。よろしくお願いします。</td><td class="diff">从这里开始第10<del>次十</del>连抽。请多关照。</td></tr><tr><td class="t">429.0s</td>
+          <td class="src">で早速。</td><td class="diff"><del>那么事不宜迟</del><ins>马上</ins>。</td></tr><tr><td class="t">441.8s</td>
+          <td class="src">これは荒れたガラスを避ける戦国ゆのさん。</td><td class="diff">这是<del>躲</del>避<ins>开</ins>碎玻璃的<del>战国</del><ins>千石</ins>由乃。</td></tr><tr><td class="t">448.4s</td>
+          <td class="src">一応よけとこ。</td><td class="diff"><ins>还是</ins>先躲开吧。</td></tr><tr><td class="t">460.9s</td>
+          <td class="src">暑い。</td><td class="diff">好热<del>。</del></td></tr><tr><td class="t">465.4s</td>
+          <td class="src">え、ありがたい。何何何何鏡え。</td><td class="diff">啊，太感谢了。什么什么什么什么<ins>？</ins>镜子<del>啊。</del><ins>吗？</ins></td></tr><tr><td class="t">468.9s</td>
+          <td class="src">神引き待ったなし。</td><td class="diff">神抽<del>刻不容缓</del><ins>迫在眉睫</ins>。</td></tr><tr><td class="t">475.2s</td>
+          <td class="src">あ、オブりビオニス先輩。</td><td class="diff">啊，<del>Oblivionis前辈</del><ins>奥布里维奥尼斯学长</ins>。</td></tr><tr><td class="t">483.0s</td>
+          <td class="src">すり抜けだったら、私、SSRのともりちゃんが欲しいんですよ。</td><td class="diff"><del>如果</del><ins>要</ins>是<ins>能</ins>穿<del>池</del><ins>模过去</ins>的话，我想要SSR的灯酱<ins>啊</ins>。</td></tr><tr><td class="t">491.4s</td>
+          <td class="src">ご褒美お菓子がすでに二つ確定。</td><td class="diff">奖励<del>的点心</del><ins>零食</ins>已经确定有两样了。</td></tr><tr><td class="t">498.3s</td>
+          <td class="src">では、20連目いきたいと思います。</td><td class="diff">那么，我们来进行第20<del>次十连</del>抽吧。</td></tr><tr><td class="t">502.9s</td>
+          <td class="src">え、このさ、チケットがキラキラする演出見たいんですけど。</td><td class="diff">欸，我想看那个门票闪闪发光的<del>特</del><ins>演出</ins>效<ins>果</ins>。</td></tr><tr><td class="t">508.6s</td>
+          <td class="src">行きましょう。次の10連に。</td><td class="diff">走吧，去<ins>抽</ins>下一个十连。</td></tr><tr><td class="t">531.5s</td>
+          <td class="src">たき神引きすぎたからな。</td><td class="diff"><del>立希</del><ins>因为</ins>抽卡运气太好了嘛。</td></tr><tr><td class="t">542.0s</td>
+          <td class="src">出るかな、わ待って虹。</td><td class="diff">会出来吗<ins>？哇</ins>，<del>哇</del>等等，彩虹。</td></tr><tr><td class="t">555.1s</td>
+          <td class="src">のちゃんだわ。</td><td class="diff">是<del>野</del><ins>小</ins>乃<del>花</del>啊。</td></tr><tr><td class="t">558.3s</td>
+          <td class="src">たきりつに電話したわ。</td><td class="diff">我给<ins>泷</ins>立<del>希律</del>打了电话。</td></tr><tr><td class="t">570.7s</td>
+          <td class="src">別のふじみやこさん来た。</td><td class="diff">另一个藤<del>都子</del><ins>宫小姐</ins>来了。</td></tr><tr><td class="t">574.1s</td>
+          <td class="src">おお、戦国へのさん、こんにちは。</td><td class="diff">哦，<del>战国先生</del><ins>千石由乃</ins>，你好。</td></tr><tr><td class="t">584.7s</td>
+          <td class="src">ウイカちゃんって菅さんって呼びたくならない？私だけか？</td><td class="diff">你们不会想叫初华酱“菅同学”吗？只有我<ins>这样</ins>吗？</td></tr><tr><td class="t">593.2s</td>
+          <td class="src">たきね。</td><td class="diff"><del>立希</del><ins>泷音</ins>。</td></tr><tr><td class="t">594.1s</td>
+          <td class="src">率に電話して。</td><td class="diff">给率打<ins>个</ins>电话。</td></tr><tr><td class="t">595.2s</td>
+          <td class="src">え、なんか 配信スケジュール 公式からだと私が23時からになってる。</td><td class="diff"><del>诶，怎么回事，</del><ins>好像</ins>官方发布的直播时间表上，我<del>变成</del><ins>的是从</ins>23点开始<del>了</del><ins>的</ins>。</td></tr></tbody></table></section><section><h2>v0.5 · 野乃花晾衣服（106 秒）</h2><p class="note">优化前后都使用 no-Ritsu 词表；优化侧开字数草稿。</p><div class="cards">
+      <div><b>51</b><span>首轮终句</span></div>
+      <div><b>51</b><span>优化终句</span></div>
+      <div><b>0 → 5</b><span>草稿</span></div>
+      <div><b>2.8s → 2.8s</b><span>终句 p90</span></div>
+      <div><b>0 → 0</b><span>&gt;8s 长句</span></div>
+      <div><b>5840 → 5571</b><span>prompt tokens</span></div>
+    </div>
+      <p class="same">另有 27 句完全一致，已收起。</p><table><thead><tr><th>时间</th><th>日语</th><th>译文 diff（红=优化前 / 绿=优化后）</th></tr></thead>
+      <tbody><tr><td class="t">0.4s</td>
+          <td class="src">眠いですって こうやってぼーっとして。</td><td class="diff"><del>他</del>说困了，就这样发呆<del>呢</del>。</td></tr><tr><td class="t">5.1s</td>
+          <td class="src">あのママなんかがね。</td><td class="diff">那个<ins>，是</ins>妈妈<del>什么</del><ins>之类</ins>的<del>啊</del><ins>呢</ins>。</td></tr><tr><td class="t">10.3s</td>
+          <td class="src">あの、歩いてってね。</td><td class="diff">那个，<ins>是</ins>走<del>过</del><ins>着</ins>去<ins>的</ins>哦。</td></tr><tr><td class="t">13.7s</td>
+          <td class="src">一緒にやろうと思ったらね、ママながね。</td><td class="diff">本来想一起做<del>来着</del><ins>的</ins>，<ins>结果</ins>妈妈<del>永。</del><ins>说……</ins></td></tr><tr><td class="t">18.7s</td>
+          <td class="src">は？</td><td class="diff">啊<del>？</del><ins>。</ins></td></tr><tr><td class="t">19.1s</td>
+          <td class="src">えらい。</td><td class="diff">真<del>了不起</del><ins>厉害</ins>。</td></tr><tr><td class="t">20.1s</td>
+          <td class="src">のちゃん、お洗濯物。</td><td class="diff"><del>野乃花</del><ins>小诺</ins>，要洗的衣服。</td></tr><tr><td class="t">22.0s</td>
+          <td class="src">ゆってくれるのって。</td><td class="diff">愿意跟我说<del>呢。</del><ins>……</ins></td></tr><tr><td class="t">24.0s</td>
+          <td class="src">言ったからね。</td><td class="diff"><del>我说过了</del><ins>是从泷那边</ins>哦。</td></tr><tr><td class="t">25.4s</td>
+          <td class="src">のちゃんがね。</td><td class="diff"><del>是野乃花啊</del><ins>……酱呢</ins>。</td></tr><tr><td class="t">40.3s</td>
+          <td class="src">言ったね。</td><td class="diff"><del>我</del>说<del>过了吧</del><ins>出来的话呢</ins>。</td></tr><tr><td class="t">42.5s</td>
+          <td class="src">はい、じゃあ、ののちゃんは。</td><td class="diff">好<del>的</del>，那么，野乃酱。</td></tr><tr><td class="t">55.1s</td>
+          <td class="src">あのまま長やかね。</td><td class="diff">就那样<del>一直持</del><ins>继</ins>续下去吧。</td></tr><tr><td class="t">56.8s</td>
+          <td class="src">のちゃんはハンガーにかけるやつをやってね。</td><td class="diff"><del>野乃花，你来</del><ins>小…</ins>负责把衣服挂到衣架上<del>吧</del><ins>哦</ins>。</td></tr><tr><td class="t">60.3s</td>
+          <td class="src">はいってて。</td><td class="diff"><ins>已经</ins>进<del>来</del><ins>去</ins>了。</td></tr><tr><td class="t">74.2s</td>
+          <td class="src">あられちゃんったなって言ってね。</td><td class="diff"><ins>啊，会</ins>说<del>什么</del>“<del>真是的，阿拉蕾酱</del><ins>我累了</ins>”之类的。</td></tr><tr><td class="t">77.4s</td>
+          <td class="src">あの、その、またマッサージチェアのところに戻っててね。</td><td class="diff">那个，<del>就是，又</del><ins>请</ins>回到按摩椅那边去<del>了</del>哦。</td></tr><tr><td class="t">81.2s</td>
+          <td class="src">ちょっと疲れちゃったってたらねママがね。</td><td class="diff"><del>要</del><ins>嗯，你说过有点累了吧。妈妈，</ins>是妈妈说<del>有点累了</del>的<del>话呢</del>。</td></tr><tr><td class="t">85.0s</td>
+          <td class="src">寝てんな。</td><td class="diff"><ins>去</ins>睡<del>着了啊</del><ins>吧</ins>。</td></tr><tr><td class="t">88.2s</td>
+          <td class="src">もうののちゃん。</td><td class="diff"><del>真是的，</del>野乃酱。</td></tr><tr><td class="t">89.4s</td>
+          <td class="src">もう今日は</td><td class="diff">今天<del>已经</del><ins>就</ins></td></tr><tr><td class="t">90.4s</td>
+          <td class="src">さっきママが。</td><td class="diff"><del>刚才</del><ins>泷</ins>妈妈<del>……</del><ins>永。</ins></td></tr><tr><td class="t">104.4s</td>
+          <td class="src">こうやって上見て</td><td class="diff">像这样往上看<ins>。</ins></td></tr><tr><td class="t">105.5s</td>
+          <td class="src">ええって。</td><td class="diff"><del>嗯，好的</del><ins>没事啦</ins>。</td></tr></tbody></table></section><section><h2>v0.5 · 野乃花魔女裁判 50:20（110 秒）</h2><p class="note">重点看 ひろ/律/希罗 是否稳定。</p><div class="cards">
+      <div><b>48</b><span>首轮终句</span></div>
+      <div><b>48</b><span>优化终句</span></div>
+      <div><b>0 → 16</b><span>草稿</span></div>
+      <div><b>3.4s → 3.4s</b><span>终句 p90</span></div>
+      <div><b>0 → 0</b><span>&gt;8s 长句</span></div>
+      <div><b>5651 → 5721</b><span>prompt tokens</span></div>
+    </div>
+      <p class="same">另有 29 句完全一致，已收起。</p><table><thead><tr><th>时间</th><th>日语</th><th>译文 diff（红=优化前 / 绿=优化后）</th></tr></thead>
+      <tbody><tr><td class="t">3.2s</td>
+          <td class="src">先ほどの極長からの話の後も</td><td class="diff">刚才极长讲话之后<ins>也</ins></td></tr><tr><td class="t">5.6s</td>
+          <td class="src">特に親しく会話も交わせず。</td><td class="diff">尤其没能亲<del>密</del><ins>近</ins>地交谈。</td></tr><tr><td class="t">7.6s</td>
+          <td class="src">各自の囚人番号が振られて、振られている部屋に戻った。</td><td class="diff"><ins>回到了</ins>各自被分配了囚犯编号<del>，回到了被指定</del>的房间。</td></tr><tr><td class="t">12.1s</td>
+          <td class="src">ただなんとなく合う合わないは感じ取っているのか。</td><td class="diff"><del>只</del><ins>不过，他们</ins>是<del>隐约</del><ins>不是多少能</ins>感觉到<del>了</del>合不合得来<del>吧</del><ins>呢</ins>。</td></tr><tr><td class="t">17.8s</td>
+          <td class="src">いや、ちょっとね。なんでヒロちゃんと。</td><td class="diff">不是，有点<del>……</del><ins>那个啊。</ins>为什么和希罗酱……</td></tr><tr><td class="t">27.9s</td>
+          <td class="src">なんかののちゃんってその。</td><td class="diff">野乃酱<del>好像就是</del><ins>她</ins>那个<del>。</del><ins>……</ins></td></tr><tr><td class="t">34.8s</td>
+          <td class="src">ひろちゃんも正しく、正しくないと嫌みたいな感じじゃん。</td><td class="diff"><ins>泷</ins>希罗酱也是那种，必须得正确<del>，</del><ins>、</ins>不正确就不行的感觉嘛。</td></tr><tr><td class="t">39.5s</td>
+          <td class="src">だから、ひろちゃんは常に正しいんだけど。</td><td class="diff">所以，希罗酱<del>一直</del><ins>永远</ins>都是对的。</td></tr><tr><td class="t">49.8s</td>
+          <td class="src">それってひろちゃんの価値観の正しさじゃんみたいな。</td><td class="diff">那不就是希罗酱价值观的正确性嘛<ins>，之类的</ins>。</td></tr><tr><td class="t">53.2s</td>
+          <td class="src">感じで思うんですよ。</td><td class="diff">我是这么<ins>感</ins>觉<del>得</del>的。</td></tr><tr><td class="t">57.4s</td>
+          <td class="src">あの、それをね。</td><td class="diff">那个，就是那个<del>啊</del>。</td></tr><tr><td class="t">59.7s</td>
+          <td class="src">正しさだと信じて振りかざす様子に。</td><td class="diff">那种<ins>坚信</ins>自<del>以为</del><ins>己</ins>是正<del>义</del><ins>确的</ins>而四处挥舞的<del>模样</del><ins>姿态</ins>。</td></tr><tr><td class="t">64.6s</td>
+          <td class="src">楽しいと思ってるけど、ひろちゃんの中での楽しさだよ。</td><td class="diff">虽然觉得开心，但那是希罗酱<ins>自己</ins>心里的开心哦。</td></tr><tr><td class="t">68.2s</td>
+          <td class="src">みたいな感じで。</td><td class="diff">就像<del>那</del><ins>这</ins>样。</td></tr><tr><td class="t">69.6s</td>
+          <td class="src">その。</td><td class="diff"><del>那个</del><ins>微风</ins>。</td></tr><tr><td class="t">70.4s</td>
+          <td class="src">みんなにとって楽しさは違うんだよ。一人一人みたいな感じで。</td><td class="diff">对每个人来说，<del>快乐的定义</del><ins>泷纱</ins>都<ins>是</ins>不一样<ins>的</ins>。就像每个人<ins>眼中的她</ins>都<del>是独</del><ins>不</ins>一<del>无二的</del><ins>样那样</ins>。</td></tr><tr><td class="t">93.9s</td>
+          <td class="src">いいかい？</td><td class="diff"><del>听好了？</del><ins>初华。</ins></td></tr><tr><td class="t">97.8s</td>
+          <td class="src">いや、でも、レイヤちゃん、え、なんか怖いんだけど、レイヤちゃんとヒロちゃんのさ。</td><td class="diff">不是，但是<del>，</del>蕾雅酱，诶，总觉得有点可怕啊，就是蕾雅酱和希罗酱的……</td></tr><tr><td class="t">108.6s</td>
+          <td class="src">ゆのちゃんはやっぱその。</td><td class="diff"><del>由乃</del><ins>素世</ins>酱果然还是那个<del>。</del><ins>……</ins></td></tr></tbody></table></section>
