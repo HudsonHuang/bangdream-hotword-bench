@@ -15,56 +15,53 @@ ins{color:#6bff9e;background:#173a24;text-decoration:none} .same{color:#888;font
 <p class="note">红=优化前，绿=优化后；完全一致的句子已收起。此页是逐句字幕 diff，不是字级人工评测。</p>
 <div class="summary"><h2 style="border:0;margin:0 0 8px">聚合摘要</h2>
 <table><thead><tr><th>子集</th><th>优化前</th><th>优化后</th><th>说明</th></tr></thead><tbody>
-<tr><td>v0.3 gold（180s）</td><td>BLEU 18.89 / charF1 .437 / first-zh 1.26s</td><td>BLEU 17.16 / charF1 .393 / first-zh 0.23s</td><td>字数草稿把首字提前；BLEU 受重跑波动影响</td></tr>
+<tr><td>v0.3 gold（180s）</td><td>BLEU 18.89 / charF1 .437 / first-zh 1.26s</td><td>BLEU 17.90 / charF1 .405 / first-zh 0.85s</td><td>字数草稿把首字提前；BLEU 受重跑波动影响</td></tr>
 <tr><td>v0.4 前 10 分钟</td><td>草稿 7 / 终句 187 / p90 3.56s / calls 187</td><td>草稿 60 / 终句 186 / p90 3.56s / calls 186</td><td>草稿确实跑起来了；终句长度未变</td></tr>
 <tr><td>v0.5 晾衣服（106s）</td><td>草稿 0 / 律 0 / 由乃 0</td><td>草稿 5 / 律 0 / 由乃 0</td><td>日常句不再冒律/由乃</td></tr>
 <tr><td>v0.5 魔女裁判（110s）</td><td>草稿 0 / 律 0 / 希罗 9</td><td>草稿 16 / 律 0 / 希罗 9</td><td>ひろ→希罗稳定；仍有 1 句“由乃”待查</td></tr>
 </tbody></table></div>
-<section><h2>v0.3 gold · 2–5 分钟：时间草稿 → 字数草稿</h2><p class="note">同一条 180 秒；优化侧开 12 字草稿。BLEU/charF1 可能因重跑波动，重点看首字和草稿数。</p><div class="cards">
+<section><h2>v0.3 gold · 2–5 分钟：时间草稿 → 字数草稿</h2><p class="note">同一条 180 秒；优化侧开 16 字草稿。BLEU/charF1 可能因重跑波动，重点看首字和草稿数。</p><div class="cards">
       <div><b>70</b><span>首轮终句</span></div>
       <div><b>70</b><span>优化终句</span></div>
-      <div><b>1 → 34</b><span>草稿</span></div>
+      <div><b>1 → 24</b><span>草稿</span></div>
       <div><b>4.0s → 4.2s</b><span>终句 p90</span></div>
       <div><b>1 → 1</b><span>&gt;8s 长句</span></div>
-      <div><b>7689 → 7723</b><span>prompt tokens</span></div>
+      <div><b>7689 → 7731</b><span>prompt tokens</span></div>
     </div>
-      <p class="same">另有 33 句完全一致，已收起。</p><table><thead><tr><th>时间</th><th>日语</th><th>译文 diff（红=优化前 / 绿=优化后）</th></tr></thead>
+      <p class="same">另有 36 句完全一致，已收起。</p><table><thead><tr><th>时间</th><th>日语</th><th>译文 diff（红=优化前 / 绿=优化后）</th></tr></thead>
       <tbody><tr><td class="t">1.0s</td>
-          <td class="src">そう！</td><td class="diff"><del>对！</del><ins>微风。</ins></td></tr><tr><td class="t">2.6s</td>
-          <td class="src">ちょっとやばいと思います。ほんとゆの食べろですよ。</td><td class="diff">我觉得有点不妙<ins>啊</ins>。真的，由乃你快吃<del>啊</del><ins>吧</ins>。</td></tr><tr><td class="t">14.1s</td>
+          <td class="src">そう！</td><td class="diff"><del>对！</del><ins>微风。</ins></td></tr><tr><td class="t">14.1s</td>
           <td class="src">率は結構ちゃんと食べてますし，私も結構ちゃんと食べてる。</td><td class="diff">率吃得还挺<del>多</del><ins>正常</ins>的，我也吃得挺<del>多</del><ins>正常</ins>的。</td></tr><tr><td class="t">17.8s</td>
-          <td class="src">じゃあ。</td><td class="diff"><del>那么</del><ins>……之后就再也没做过了吧</ins>。</td></tr><tr><td class="t">19.2s</td>
-          <td class="src">せっかくだから、うちに泊まりに来た日もちょっと話そうかな。</td><td class="diff">难得有机会，我也来聊聊你来我家<del>住的</del><ins>留宿</ins>那天<ins>的事</ins>吧。</td></tr><tr><td class="t">22.5s</td>
-          <td class="src">うわーすごそううちに泊まりに来た日。</td><td class="diff">哇，听起来好厉害<del>，</del><ins>。</ins>来我家住的那天。</td></tr><tr><td class="t">25.7s</td>
-          <td class="src">ちょユノから行きます。はい。</td><td class="diff">稍等，<ins>从</ins>由乃<del>先来</del><ins>开始</ins>。好的。</td></tr><tr><td class="t">32.9s</td>
+          <td class="src">じゃあ。</td><td class="diff"><del>那么</del><ins>是叫泷里来着吗</ins>。</td></tr><tr><td class="t">22.5s</td>
+          <td class="src">うわーすごそううちに泊まりに来た日。</td><td class="diff">哇，听起来好厉害<del>，</del><ins>。</ins>来我家住的那天。</td></tr><tr><td class="t">32.9s</td>
           <td class="src">ペッパーランチを作って一緒に食べましたね。</td><td class="diff">我们一起做了Pepper Lunch吃呢。<ins>嗯。</ins></td></tr><tr><td class="t">36.7s</td>
-          <td class="src">それと、えっと、シタラバとののかと半分こしたパピコですね。</td><td class="diff"><ins>然后，</ins>还有，呃，<ins>就是</ins>和<del>设乐以及</del><ins>Shitaraba、</ins>野乃花分着吃的<ins>那个</ins>P<del>APICO</del><ins>apico</ins>冰棒。</td></tr><tr><td class="t">54.3s</td>
-          <td class="src">ゆのちゃんとたばる。</td><td class="diff">由乃酱和<del>巴尔</del><ins>泷郎</ins>。</td></tr><tr><td class="t">59.8s</td>
-          <td class="src">なんか？</td><td class="diff"><del>怎么了？</del><ins>总觉得……</ins></td></tr><tr><td class="t">61.5s</td>
-          <td class="src">パピコを買ってきてって 私 リクエストしたんだけどさ。</td><td class="diff">我明明拜托你去买PapiCo<del>来着</del><ins>的</ins>。</td></tr><tr><td class="t">64.9s</td>
-          <td class="src">あの2本で1つじゃん。</td><td class="diff">那两<del>根</del><ins>个</ins>不是<del>算</del>一<del>个</del><ins>套</ins>吗。</td></tr><tr><td class="t">76.7s</td>
-          <td class="src">そうだよ、あの人。</td><td class="diff"><del>对</del><ins>小夜</ins>，<del>就是</del>那个人。</td></tr><tr><td class="t">78.0s</td>
-          <td class="src">あのアイス三個食べてたんだよね。そうだよね、三個食べてた。</td><td class="diff">你当时吃了三个冰淇淋对吧。<del>是</del><ins>对</ins>啊，吃了三个。</td></tr><tr><td class="t">81.3s</td>
-          <td class="src">もうののかも一緒にひろくしてやろうかと思ったもんねねあれはやばかった。</td><td class="diff">我<del>甚至</del><ins>当时还</ins>想<del>过要不要</del><ins>着干脆</ins>把野乃花也一起<del>算</del><ins>拉</ins>进<del>去，扩大范围</del><ins>来</ins>呢。<del>哎呀</del><ins>对吧</ins>，那<del>件事</del>真是太离谱了。</td></tr><tr><td class="t">86.4s</td>
-          <td class="src">で、まあ、えっと、ゆのがその日は合計702キロカロリーですね。少ないな、それでも。</td><td class="diff">然后<del>，嗯</del>，那个，由乃那天总共是702千卡。即使这样<del>也</del>还是很少呢。</td></tr><tr><td class="t">92.8s</td>
-          <td class="src">そうかな。</td><td class="diff"><del>是吗</del><ins>这样啊</ins>。</td></tr><tr><td class="t">93.7s</td>
-          <td class="src">少ないよ，でもペッパーランチ正直。</td><td class="diff"><del>量很</del><ins>太</ins>少<del>哦，</del><ins>了。</ins>不过Pepper Lunch<del>很</del><ins>挺</ins>实在<ins>的</ins>。</td></tr><tr><td class="t">96.9s</td>
-          <td class="src">そんな 食べてない気もするんだよね。</td><td class="diff">感觉<del>好像</del><ins>我</ins>也没吃<del>那么</del>多<del>呢</del><ins>少啊</ins>。</td></tr><tr><td class="t">98.8s</td>
+          <td class="src">それと、えっと、シタラバとののかと半分こしたパピコですね。</td><td class="diff"><ins>然后，</ins>还有<del>，呃</del><ins>那个</ins>，和设乐以及野乃花<ins>一人一半</ins>分着吃的PAPICO冰棒。</td></tr><tr><td class="t">47.4s</td>
+          <td class="src">なんかののかがウキウキで。</td><td class="diff"><ins>总觉得，</ins>野乃花好像<del>很开心</del><ins>特别兴奋</ins>。</td></tr><tr><td class="t">49.5s</td>
+          <td class="src">ゆのちゃんとパピコ半分こするって言って</td><td class="diff">说<del>好了</del><ins>是</ins>要和由乃酱<del>一人一半</del>分着<del>吃</del><ins>喝</ins>PapiCo<del>的</del></td></tr><tr><td class="t">54.3s</td>
+          <td class="src">ゆのちゃんとたばる。</td><td class="diff">由乃酱和<del>巴尔</del><ins>泷郎</ins>。</td></tr><tr><td class="t">56.8s</td>
+          <td class="src">ずっとアイスコラうろうろうろうろしてる。</td><td class="diff">冰可乐一直在到处晃悠晃悠<del>晃悠</del>。</td></tr><tr><td class="t">64.9s</td>
+          <td class="src">あの2本で1つじゃん。</td><td class="diff">那两<del>根不</del><ins>个</ins>是<del>算</del>一<del>个吗</del><ins>对啊</ins>。</td></tr><tr><td class="t">67.8s</td>
+          <td class="src">あれ、両方くれるのかなって思ったら、すっげえ欲しそうに見てて、半分こするって言ったら、うんって言ってて、あ、絶対こいつ元から半分こするつもりだったんだな。</td><td class="diff">咦，我还以为两个都要给我呢，结果他一脸超想要的样子盯着看，我说一人一半吧，他就“嗯”地答应了。啊，这家伙绝对一开始就打算<del>跟我平</del>分<ins>一半</ins>的。</td></tr><tr><td class="t">78.0s</td>
+          <td class="src">あのアイス三個食べてたんだよね。そうだよね、三個食べてた。</td><td class="diff">你<del>当时</del><ins>刚才</ins>吃了三个冰淇淋对吧。是啊，吃了三个。</td></tr><tr><td class="t">81.3s</td>
+          <td class="src">もうののかも一緒にひろくしてやろうかと思ったもんねねあれはやばかった。</td><td class="diff">我甚至想过<del>要不要</del>把野乃花也一起<del>算</del><ins>拉</ins>进<del>去</del><ins>来</ins>，<del>扩</del><ins>把事情闹</ins>大<del>范围</del>呢。<del>哎呀</del><ins>对吧</ins>，那件事真<del>是</del><ins>的</ins>太离谱了。</td></tr><tr><td class="t">92.8s</td>
+          <td class="src">そうかな。</td><td class="diff">是<del>吗</del><ins>微风吧</ins>。</td></tr><tr><td class="t">93.7s</td>
+          <td class="src">少ないよ，でもペッパーランチ正直。</td><td class="diff"><del>量很</del><ins>太</ins>少<del>哦，</del><ins>了。</ins>不过Pepper Lunch<del>很</del><ins>说</ins>实<del>在。</del><ins>话……</ins></td></tr><tr><td class="t">96.9s</td>
+          <td class="src">そんな 食べてない気もするんだよね。</td><td class="diff">感觉<del>好像</del>也没吃<del>那么</del>多<del>呢</del><ins>少啊</ins>。</td></tr><tr><td class="t">98.8s</td>
           <td class="src">うん、なんかね、一つだけ。</td><td class="diff">嗯，就一<del>个</del><ins>点</ins>。</td></tr><tr><td class="t">105.1s</td>
-          <td class="src">そうかもで、その日の率。</td><td class="diff">也许<ins>是</ins>吧，<del>就是</del>那天的比率。</td></tr><tr><td class="t">111.7s</td>
+          <td class="src">そうかもで、その日の率。</td><td class="diff">也许吧，<del>就是</del>那天的比率。</td></tr><tr><td class="t">111.7s</td>
           <td class="src">お昼に食べて</td><td class="diff">中午吃<ins>吧</ins></td></tr><tr><td class="t">113.3s</td>
           <td class="src">はい、この後スタバの抹茶ティーラテ。</td><td class="diff">好的，之后<del>喝</del><ins>是</ins>星巴克的抹茶拿铁。</td></tr><tr><td class="t">119.6s</td>
           <td class="src">えコンビニに置いた際。</td><td class="diff"><del>嗯</del><ins>咦</ins>，<del>放在</del><ins>去</ins>便利店的时候。</td></tr><tr><td class="t">122.6s</td>
           <td class="src">好きすぎて家まで我慢できず、lからを買って食べておりまして。</td><td class="diff">因为太喜欢了，等不及回家，就<del>在L</del>买了<ins>埃尔卡拉吃了起</ins>来<del>吃</del>。</td></tr><tr><td class="t">129.0s</td>
-          <td class="src">これからうちでご飯だけど大丈夫ってうん大丈夫って言って</td><td class="diff"><ins>已经吃过了。虽然</ins>接下来要在<del>我</del>家<ins>里</ins>吃饭，<ins>但</ins>没关系吧？嗯，<del>你</del><ins>他</ins>说没关系<del>的</del>。</td></tr><tr><td class="t">133.2s</td>
-          <td class="src">食べた？</td><td class="diff"><ins>你一直在</ins>吃<del>了吗？</del><ins>呢。</ins></td></tr><tr><td class="t">135.7s</td>
-          <td class="src">で、お家に帰ってきてからペッパーランチを食べ。</td><td class="diff"><del>然后，</del>回到家之后吃了Pepper Lunch<del>。</del></td></tr><tr><td class="t">138.8s</td>
-          <td class="src">え、ハバネロビアスティック。</td><td class="diff">诶，哈瓦那辣椒<ins>味能量</ins>棒。</td></tr><tr><td class="t">140.8s</td>
-          <td class="src">これ、お菓子かな？</td><td class="diff">这<del>个，</del>是点心吗？</td></tr><tr><td class="t">142.4s</td>
-          <td class="src">おつまみ おつまみ 食べて。</td><td class="diff"><del>下酒菜，</del><ins>吃点</ins>下酒菜，吃点<ins>点心</ins>吧。</td></tr><tr><td class="t">155.7s</td>
-          <td class="src">夜食 夜食と思ってなるほど。</td><td class="diff">夜宵，<ins>原来是</ins>当<del>成是</del><ins>作</ins>夜宵啊，原来如此。</td></tr><tr><td class="t">158.6s</td>
-          <td class="src">で、この、そうだね、この夜食まで含めて合計が2000キロカロリーぐらい。</td><td class="diff">然后，这个，对啊，<del>连</del><ins>算上</ins>这顿夜宵<del>算在内</del>，总共大概2000大卡。</td></tr><tr><td class="t">164.9s</td>
-          <td class="src">まあまあまあセーフですね，そうだね，まあまあまあ。</td><td class="diff"><ins>啊，还好</ins>还好还好，算安全了<del>，</del><ins>。</ins>是啊<ins>。Soyo嘛</ins>，<ins>就还好</ins>还好还好。</td></tr><tr><td class="t">172.8s</td>
+          <td class="src">これからうちでご飯だけど大丈夫ってうん大丈夫って言って</td><td class="diff"><ins>小泷，吃过了。</ins>接下来要<del>在我</del><ins>回</ins>家吃饭，<ins>但他说</ins>没<del>关系吧？</del><ins>事，</ins>嗯，<del>你</del><ins>他</ins>说没<del>关系的</del><ins>事</ins>。</td></tr><tr><td class="t">133.2s</td>
+          <td class="src">食べた？</td><td class="diff"><del>吃</del><ins>累坏</ins>了<del>吗？</del><ins>。累坏了吧。</ins></td></tr><tr><td class="t">135.7s</td>
+          <td class="src">で、お家に帰ってきてからペッパーランチを食べ。</td><td class="diff">然后<del>，</del>回到家<del>之后</del>吃了Pepper Lunch<del>。</del></td></tr><tr><td class="t">138.8s</td>
+          <td class="src">え、ハバネロビアスティック。</td><td class="diff"><del>诶</del><ins>嗯，呃</ins>，哈瓦那辣椒<ins>牛肉</ins>棒。</td></tr><tr><td class="t">142.4s</td>
+          <td class="src">おつまみ おつまみ 食べて。</td><td class="diff"><del>下酒菜，</del><ins>吃点</ins>下酒菜，吃点<ins>点心</ins>吧。</td></tr><tr><td class="t">153.5s</td>
+          <td class="src">ちょっとつられちゃってね。</td><td class="diff">有点被带<del>跑</del><ins>偏</ins>了呢。</td></tr><tr><td class="t">155.7s</td>
+          <td class="src">夜食 夜食と思ってなるほど。</td><td class="diff">夜宵，<del>当成</del><ins>原来以为</ins>是夜宵啊<del>，原来如此</del>。</td></tr><tr><td class="t">158.6s</td>
+          <td class="src">で、この、そうだね、この夜食まで含めて合計が2000キロカロリーぐらい。</td><td class="diff">然后，这个，对啊，连这顿夜宵算在内，总共大概<ins>是</ins>2000<del>大</del><ins>千</ins>卡。</td></tr><tr><td class="t">164.9s</td>
+          <td class="src">まあまあまあセーフですね，そうだね，まあまあまあ。</td><td class="diff"><ins>啊，</ins>还好还好，算安全<del>了，</del><ins>过关呢。</ins>是啊<ins>。Soyo嘛</ins>，<del>还好还好</del><ins>就一般般啦</ins>。</td></tr><tr><td class="t">172.8s</td>
           <td class="src">結構でも。</td><td class="diff">不用了<ins>也可以</ins>。</td></tr><tr><td class="t">175.7s</td>
           <td class="src">抹茶ティーラテは168キロカロリーだから、そんなにカロリーがないんだね。</td><td class="diff">抹茶拿铁是168千卡，所以热量<del>其实没那么</del><ins>不算</ins>高呢。</td></tr></tbody></table></section><section><h2>v0.4 前 10 分钟：时间草稿 → 字数草稿 + 热词修正</h2><p class="note">同一条音频；优化后草稿在 partial 到 12 字时就发，不再等 4 秒。</p><div class="cards">
       <div><b>187</b><span>首轮终句</span></div>
