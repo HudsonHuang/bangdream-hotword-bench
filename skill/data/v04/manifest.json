@@ -1,0 +1,22 @@
+{
+  "dataset": "v0.4-full",
+  "video_id": "xXASBwSHwZE",
+  "title": "【 #アワーノーツ 】千石ユノさんはゆめみたが好き",
+  "duration_s": 2456.0,
+  "audio": "audio16k.wav",
+  "reference": "ref.ja.srt",
+  "units": 471,
+  "mentions": 47,
+  "groups": {
+    "tomori": 6,
+    "taki": 1,
+    "arale": 7,
+    "yuno": 9,
+    "ritsu": 7,
+    "rana": 12,
+    "miyako": 3,
+    "mygo": 1,
+    "anon": 1
+  },
+  "source": "YouTube auto captions (ja) + semantic unit cleanup"
+}
